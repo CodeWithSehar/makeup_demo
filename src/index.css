@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  /* Modern Web Guidance: content-visibility for offscreen sections */
+  .content-visibility-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 500px;
+  }
+
+  .content-visibility-auto-lg {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 800px;
+  }
+}
+
+/* Accessible focus styling */
+:focus-visible {
+  outline: 2px solid #be185d;
+  outline-offset: 2px;
+}
+
+/* User-valid / User-invalid modern form patterns */
+input:user-valid:not(:placeholder-shown) {
+  border-color: #10b981;
+}
+
+input:user-invalid:not(:placeholder-shown) {
+  border-color: #ef4444;
+}
+
+/* Glassmorphism helpers */
+.glass-header {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Reduced Motion Best Practice: respect user accessibility preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
