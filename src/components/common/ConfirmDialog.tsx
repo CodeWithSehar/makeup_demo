@@ -29,15 +29,15 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
       <div className="text-center space-y-4">
         <div
           className={`w-12 h-12 rounded-full mx-auto flex items-center justify-center ${
-            isDestructive ? 'bg-rose-100 text-rose-600' : 'bg-amber-100 text-amber-600'
+            isDestructive ? 'bg-red-50 text-error' : 'bg-amber-50 text-warning'
           }`}
         >
           <AlertTriangle className="w-6 h-6" />
         </div>
 
         <div className="space-y-1">
-          <h4 className="font-serif text-lg font-bold text-stone-900">{title}</h4>
-          <p className="text-xs text-stone-600 leading-relaxed">{message}</p>
+          <h4 className="font-serif text-lg font-bold text-espresso">{title}</h4>
+          <p className="text-xs text-muted-taupe leading-relaxed">{message}</p>
         </div>
 
         <div className="grid grid-cols-2 gap-3 pt-3">
@@ -48,7 +48,7 @@ export const ConfirmDialog: React.FC<ConfirmDialogProps> = ({
             type="button"
             onClick={onConfirm}
             className={`px-4 py-2 rounded-full text-xs font-semibold text-white transition-all cursor-pointer ${
-              isDestructive ? 'bg-rose-600 hover:bg-rose-700' : 'bg-stone-900 hover:bg-black'
+              isDestructive ? 'bg-error hover:bg-red-800' : 'bg-espresso hover:bg-mocha'
             }`}
           >
             {confirmLabel}

@@ -19,13 +19,13 @@ export const ProductEditPage: React.FC = () => {
   if (!product) {
     return (
       <div className="py-20 text-center space-y-4">
-        <h3 className="font-serif text-xl font-bold text-stone-900">Product Not Found</h3>
-        <p className="text-xs text-stone-500">
+        <h3 className="font-serif text-xl font-bold text-espresso">Product Not Found</h3>
+        <p className="text-xs text-muted-taupe">
           The requested product ID does not exist in the catalog.
         </p>
         <Link
           to="/admin/products"
-          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-stone-900 text-white text-xs font-semibold"
+          className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-espresso text-white text-xs font-semibold"
         >
           &larr; Back to Products
         </Link>
@@ -52,7 +52,7 @@ export const ProductEditPage: React.FC = () => {
         actions={
           <Link
             to="/admin/products"
-            className="inline-flex items-center gap-1.5 text-xs text-stone-600 hover:text-stone-900 font-semibold"
+            className="inline-flex items-center gap-1.5 text-xs text-mocha hover:text-espresso font-semibold"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Products</span>
@@ -60,7 +60,7 @@ export const ProductEditPage: React.FC = () => {
         }
       />
 
-      <div className="bg-white rounded-3xl border border-stone-200 p-6 sm:p-8 shadow-xs">
+      <div className="bg-white rounded-3xl border border-warm-border p-6 sm:p-8 shadow-xs">
         <ProductForm
           initialValues={product}
           onSubmit={handleSubmit}

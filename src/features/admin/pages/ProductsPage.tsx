@@ -121,19 +121,19 @@ export const ProductsPage: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* Breadcrumb matching Reference Image 1 */}
-      <div className="flex items-center justify-between text-xs text-stone-500 font-mono">
+      <div className="flex items-center justify-between text-xs text-muted-taupe font-mono">
         <div className="flex items-center gap-2">
-          <Link to="/admin" className="hover:text-stone-900 transition-colors">
+          <Link to="/admin" className="hover:text-espresso transition-colors">
             Home
           </Link>
           <span>/</span>
-          <span className="text-stone-800 font-semibold">Product list</span>
+          <span className="text-espresso font-semibold">Product list</span>
         </div>
         <div className="flex items-center gap-3">
           <button
             type="button"
             onClick={() => setConfirmReset(true)}
-            className="text-stone-500 hover:text-rose-600 transition-colors flex items-center gap-1"
+            className="text-muted-taupe hover:text-error transition-colors flex items-center gap-1"
           >
             <RotateCcw className="w-3.5 h-3.5" />
             <span>Reset Demo Data</span>
@@ -149,12 +149,12 @@ export const ProductsPage: React.FC = () => {
         actions={
           <div className="flex items-center gap-2.5">
             {/* View Mode Toggle */}
-            <div className="hidden sm:flex items-center border border-stone-200 rounded-xl bg-white p-1">
+            <div className="hidden sm:flex items-center border border-warm-border rounded-xl bg-white p-1">
               <button
                 type="button"
                 onClick={() => setViewMode('grid')}
                 className={`p-1.5 rounded-lg text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer ${
-                  viewMode === 'grid' ? 'bg-rose-50 text-primary' : 'text-stone-500 hover:text-stone-900'
+                  viewMode === 'grid' ? 'bg-surface-soft text-mocha' : 'text-muted-taupe hover:text-espresso'
                 }`}
                 title="Grid Cards View"
               >
@@ -165,7 +165,7 @@ export const ProductsPage: React.FC = () => {
                 type="button"
                 onClick={() => setViewMode('table')}
                 className={`p-1.5 rounded-lg text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer ${
-                  viewMode === 'table' ? 'bg-rose-50 text-primary' : 'text-stone-500 hover:text-stone-900'
+                  viewMode === 'table' ? 'bg-surface-soft text-mocha' : 'text-muted-taupe hover:text-espresso'
                 }`}
                 title="Table List View"
               >
@@ -184,8 +184,8 @@ export const ProductsPage: React.FC = () => {
       />
 
       {toastMessage && (
-        <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 flex items-center gap-2 animate-in fade-in">
-          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+        <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-success flex items-center gap-2 animate-in fade-in">
+          <CheckCircle2 className="w-4 h-4 text-success shrink-0" />
           <span>{toastMessage}</span>
         </div>
       )}
@@ -193,26 +193,26 @@ export const ProductsPage: React.FC = () => {
       {/* Search & Category Filter Strip matching Reference Image 1 */}
       <div className="space-y-4">
         {/* Search Input Bar */}
-        <div className="bg-white rounded-2xl border border-stone-200 p-3.5 shadow-xs flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="bg-white rounded-2xl border border-warm-border p-3.5 shadow-xs flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="relative w-full md:w-96">
-            <Search className="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <Search className="w-4 h-4 text-muted-taupe absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search by Product Name, SKU & Categories..."
-              className="w-full pl-10 pr-4 py-2 rounded-xl border border-stone-200 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+              className="w-full pl-10 pr-4 py-2 rounded-xl border border-warm-border text-xs focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold"
             />
           </div>
 
           <div className="flex items-center gap-3 w-full md:w-auto justify-end">
             {/* Status Filter */}
-            <div className="flex items-center gap-1 border border-stone-200 rounded-xl p-1 bg-stone-50 text-xs">
+            <div className="flex items-center gap-1 border border-warm-border rounded-xl p-1 bg-ivory text-xs">
               <button
                 type="button"
                 onClick={() => setSelectedStatus('all')}
                 className={`px-3 py-1 rounded-lg font-semibold transition-colors cursor-pointer ${
-                  selectedStatus === 'all' ? 'bg-white text-stone-900 shadow-xs' : 'text-stone-600'
+                  selectedStatus === 'all' ? 'bg-white text-espresso shadow-xs' : 'text-mocha'
                 }`}
               >
                 All Status
@@ -221,7 +221,7 @@ export const ProductsPage: React.FC = () => {
                 type="button"
                 onClick={() => setSelectedStatus('published')}
                 className={`px-3 py-1 rounded-lg font-semibold transition-colors cursor-pointer ${
-                  selectedStatus === 'published' ? 'bg-emerald-600 text-white shadow-xs' : 'text-stone-600'
+                  selectedStatus === 'published' ? 'bg-success text-white shadow-xs' : 'text-mocha'
                 }`}
               >
                 Active
@@ -230,7 +230,7 @@ export const ProductsPage: React.FC = () => {
                 type="button"
                 onClick={() => setSelectedStatus('draft')}
                 className={`px-3 py-1 rounded-lg font-semibold transition-colors cursor-pointer ${
-                  selectedStatus === 'draft' ? 'bg-stone-800 text-white shadow-xs' : 'text-stone-600'
+                  selectedStatus === 'draft' ? 'bg-espresso text-white shadow-xs' : 'text-mocha'
                 }`}
               >
                 Draft
@@ -255,14 +255,14 @@ export const ProductsPage: React.FC = () => {
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-3.5 py-1.5 rounded-full transition-all shrink-0 cursor-pointer flex items-center gap-1.5 ${
                   isSelected
-                    ? 'bg-primary text-white shadow-xs shadow-rose-300'
-                    : 'bg-white text-stone-700 hover:bg-rose-50 border border-stone-200'
+                    ? 'bg-espresso text-white shadow-xs shadow-espresso/20'
+                    : 'bg-white text-mocha hover:bg-surface-soft border border-warm-border'
                 }`}
               >
                 <span>{cat}</span>
                 <span
                   className={`text-[10px] px-1.5 py-0.2 rounded-full font-mono ${
-                    isSelected ? 'bg-white/20 text-white' : 'bg-stone-100 text-stone-500'
+                    isSelected ? 'bg-white/20 text-white' : 'bg-surface-soft text-muted-taupe'
                   }`}
                 >
                   {count}
@@ -274,7 +274,7 @@ export const ProductsPage: React.FC = () => {
       </div>
 
       {/* Results Count Banner */}
-      <div className="flex items-center justify-between text-xs text-stone-500 font-mono">
+      <div className="flex items-center justify-between text-xs text-muted-taupe font-mono">
         <span>
           Showing <strong>{filtered.length}</strong> of {products.length} products
           {selectedCategory !== 'All' ? ` in ${selectedCategory}` : ''}
@@ -283,12 +283,12 @@ export const ProductsPage: React.FC = () => {
 
       {/* Empty State */}
       {filtered.length === 0 && (
-        <div className="bg-white rounded-2xl border border-dashed border-stone-300 p-12 text-center space-y-3">
-          <div className="w-12 h-12 rounded-full bg-rose-50 text-primary flex items-center justify-center mx-auto">
+        <div className="bg-white rounded-2xl border border-dashed border-warm-border p-12 text-center space-y-3">
+          <div className="w-12 h-12 rounded-full bg-surface-soft text-antique-gold flex items-center justify-center mx-auto">
             <Package className="w-6 h-6" />
           </div>
-          <h3 className="font-serif text-base font-bold text-stone-900">No products found</h3>
-          <p className="text-xs text-stone-500 max-w-sm mx-auto">
+          <h3 className="font-serif text-base font-bold text-espresso">No products found</h3>
+          <p className="text-xs text-muted-taupe max-w-sm mx-auto">
             Try adjusting your search query, clearing category filters, or add a new product to the catalog.
           </p>
           <div className="pt-2">
@@ -312,24 +312,24 @@ export const ProductsPage: React.FC = () => {
             return (
               <div
                 key={product.id}
-                className="bg-white rounded-2xl border border-stone-200/90 shadow-xs hover:shadow-md transition-all flex flex-col justify-between overflow-hidden group"
+                className="bg-white rounded-2xl border border-warm-border shadow-xs hover:shadow-md transition-all flex flex-col justify-between overflow-hidden group"
               >
                 {/* Top Section with Picture & Specs */}
                 <div className="p-4 flex gap-4">
                   {/* Product Picture */}
-                  <div className="relative w-28 h-28 rounded-xl overflow-hidden bg-stone-100 shrink-0 border border-stone-100">
+                  <div className="relative w-28 h-28 rounded-xl overflow-hidden bg-ivory shrink-0 border border-warm-border">
                     <img
                       src={product.image}
                       alt={product.name}
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300"
                     />
                     {product.isFeatured && (
-                      <span className="absolute top-1.5 left-1.5 p-1 bg-amber-400 text-stone-900 rounded-full shadow-xs" title="Featured on Home">
-                        <Star className="w-3 h-3 fill-stone-900" />
+                      <span className="absolute top-1.5 left-1.5 p-1 bg-champagne-gold text-espresso rounded-full shadow-xs" title="Featured on Home">
+                        <Star className="w-3 h-3 fill-espresso" />
                       </span>
                     )}
                     {product.badge && (
-                      <span className="absolute bottom-1.5 left-1.5 text-[9px] font-bold bg-primary text-white px-1.5 py-0.5 rounded shadow-xs">
+                      <span className="absolute bottom-1.5 left-1.5 text-[9px] font-bold bg-antique-gold text-white px-1.5 py-0.5 rounded shadow-xs">
                         {product.badge}
                       </span>
                     )}
@@ -338,68 +338,68 @@ export const ProductsPage: React.FC = () => {
                   {/* Info Column */}
                   <div className="flex-1 min-w-0 space-y-1.5">
                     <div className="flex items-center gap-2">
-                      <span className="text-[10px] font-semibold text-rose-700 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-100 truncate">
+                      <span className="text-[10px] font-semibold text-mocha bg-surface-soft px-2 py-0.5 rounded-full border border-warm-border truncate">
                         {product.category}
                       </span>
                       {product.volumeOrWeight && (
-                        <span className="text-[10px] text-stone-400 font-mono">
+                        <span className="text-[10px] text-muted-taupe font-mono">
                           {product.volumeOrWeight}
                         </span>
                       )}
                     </div>
 
-                    <h3 className="font-serif text-sm font-bold text-stone-900 truncate leading-snug" title={product.name}>
+                    <h3 className="font-serif text-sm font-bold text-espresso truncate leading-snug" title={product.name}>
                       {product.name}
                     </h3>
 
-                    <p className="text-[11px] text-stone-500 truncate">{product.brand}</p>
+                    <p className="text-[11px] text-muted-taupe truncate">{product.brand}</p>
 
                     {/* Price and Strikethrough matching Reference Image 1 */}
                     <div className="flex items-baseline gap-2 pt-0.5">
-                      <span className="font-mono font-bold text-sm text-stone-900">
+                      <span className="font-mono font-bold text-sm text-espresso">
                         {formatPKR(product.price)}
                       </span>
                       {product.originalPrice && product.originalPrice > product.price && (
-                        <span className="font-mono text-xs text-stone-400 line-through">
+                        <span className="font-mono text-xs text-muted-taupe line-through">
                           {formatPKR(product.originalPrice)}
                         </span>
                       )}
                     </div>
 
                     {/* SKU Code */}
-                    <p className="text-[10px] font-mono text-stone-500">
-                      SKU: <strong className="text-stone-700">{product.sku || `GG-${product.id}`}</strong>
+                    <p className="text-[10px] font-mono text-muted-taupe">
+                      SKU: <strong className="text-mocha">{product.sku || `GG-${product.id}`}</strong>
                     </p>
 
                     {/* Stock status indicator */}
                     <div className="text-[11px] font-mono">
                       {isOutOfStock ? (
-                        <span className="text-rose-600 font-bold">Out of stock</span>
+                        <span className="text-error font-bold">Out of stock</span>
                       ) : isLowStock ? (
-                        <span className="text-amber-600 font-semibold">Only {product.stock} left</span>
+                        <span className="text-warning font-semibold">Only {product.stock} left</span>
                       ) : (
-                        <span className="text-stone-500">{product.stock} in stock</span>
+                        <span className="text-muted-taupe">{product.stock} in stock</span>
                       )}
                     </div>
                   </div>
                 </div>
 
                 {/* Bottom Bar: Status Toggle & Action Icons matching Reference Image 1 */}
-                <div className="px-4 py-2.5 bg-stone-50/80 border-t border-stone-100 flex items-center justify-between">
+                <div className="px-4 py-2.5 bg-ivory/80 border-t border-warm-border/70 flex items-center justify-between">
                   {/* Status Dropdown/Toggle (• Active / • Draft) */}
                   <button
                     type="button"
                     onClick={() => handleToggleStatus(product)}
                     className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full transition-colors cursor-pointer ${
                       isActive
-                        ? 'text-emerald-700 bg-emerald-100/60 hover:bg-emerald-100'
-                        : 'text-stone-600 bg-stone-200/60 hover:bg-stone-200'
+                        ? 'text-success bg-emerald-100/60 hover:bg-emerald-100'
+                        : 'text-mocha bg-surface-soft hover:bg-surface-secondary/60'
                     }`}
                     title="Click to toggle publish status"
                   >
                     <span
                       className={`w-2 h-2 rounded-full ${
-                        isActive ? 'bg-emerald-500' : 'bg-stone-400'
+                        isActive ? 'bg-success' : 'bg-muted-taupe'
                       }`}
                     />
                     <span>{isActive ? 'Active' : 'Draft'}</span>
@@ -413,19 +413,19 @@ export const ProductsPage: React.FC = () => {
                       onClick={() => handleToggleFeatured(product)}
                       className={`p-1.5 rounded-lg transition-colors cursor-pointer ${
                         product.isFeatured
-                          ? 'text-amber-500 hover:bg-amber-50'
-                          : 'text-stone-400 hover:text-stone-700 hover:bg-stone-200/50'
+                          ? 'text-antique-gold hover:bg-surface-soft'
+                          : 'text-muted-taupe hover:text-espresso hover:bg-surface-soft'
                       }`}
                       title={product.isFeatured ? 'Featured on home' : 'Mark as featured'}
                     >
-                      <Star className={`w-4 h-4 ${product.isFeatured ? 'fill-amber-400' : ''}`} />
+                      <Star className={`w-4 h-4 ${product.isFeatured ? 'fill-champagne-gold' : ''}`} />
                     </button>
 
                     {/* Duplicate */}
                     <button
                       type="button"
                       onClick={() => handleDuplicateProduct(product)}
-                      className="p-1.5 text-stone-400 hover:text-stone-700 hover:bg-stone-200/50 rounded-lg transition-colors cursor-pointer"
+                      className="p-1.5 text-muted-taupe hover:text-espresso hover:bg-surface-soft rounded-lg transition-colors cursor-pointer"
                       title="Duplicate product"
                     >
                       <Copy className="w-4 h-4" />
@@ -434,7 +434,7 @@ export const ProductsPage: React.FC = () => {
                     {/* Edit */}
                     <Link
                       to={`/admin/products/${product.id}/edit`}
-                      className="p-1.5 text-stone-400 hover:text-primary hover:bg-rose-50 rounded-lg transition-colors"
+                      className="p-1.5 text-muted-taupe hover:text-mocha hover:bg-surface-soft rounded-lg transition-colors"
                       title="Edit product"
                     >
                       <Edit2 className="w-4 h-4" />
@@ -444,7 +444,7 @@ export const ProductsPage: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setProductToDelete(product)}
-                      className="p-1.5 text-stone-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors cursor-pointer"
+                      className="p-1.5 text-muted-taupe hover:text-error hover:bg-red-50 rounded-lg transition-colors cursor-pointer"
                       title="Delete product"
                     >
                       <Trash2 className="w-4 h-4" />
@@ -459,10 +459,10 @@ export const ProductsPage: React.FC = () => {
 
       {/* TABLE VIEW (Alternative compact mode) */}
       {viewMode === 'table' && filtered.length > 0 && (
-        <div className="bg-white rounded-2xl border border-stone-200 shadow-xs overflow-hidden">
+        <div className="bg-white rounded-2xl border border-warm-border shadow-xs overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="bg-stone-50 border-b border-stone-200 font-mono text-[11px] text-stone-500">
+              <thead className="bg-ivory border-b border-warm-border font-mono text-[11px] text-muted-taupe">
                 <tr>
                   <th className="py-3 px-4">Product</th>
                   <th className="py-3 px-4">Category</th>
@@ -473,42 +473,42 @@ export const ProductsPage: React.FC = () => {
                   <th className="py-3 px-4 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-stone-100">
+              <tbody className="divide-y divide-warm-border/60">
                 {filtered.map((product) => {
                   const isActive = product.status !== 'draft';
                   return (
-                    <tr key={product.id} className="hover:bg-stone-50/60 transition-colors">
+                    <tr key={product.id} className="hover:bg-ivory/60 transition-colors">
                       <td className="py-3 px-4">
                         <div className="flex items-center gap-3">
                           <img
                             src={product.image}
                             alt={product.name}
-                            className="w-10 h-10 rounded-lg object-cover bg-stone-100 shrink-0"
+                            className="w-10 h-10 rounded-lg object-cover bg-ivory shrink-0"
                           />
                           <div>
-                            <div className="font-semibold text-stone-900">{product.name}</div>
-                            <div className="text-[11px] text-stone-500">{product.brand}</div>
+                            <div className="font-semibold text-espresso">{product.name}</div>
+                            <div className="text-[11px] text-muted-taupe">{product.brand}</div>
                           </div>
                         </div>
                       </td>
                       <td className="py-3 px-4">
-                        <span className="text-[10px] font-semibold text-rose-700 bg-rose-50 px-2 py-0.5 rounded-full border border-rose-100">
+                        <span className="text-[10px] font-semibold text-mocha bg-surface-soft px-2 py-0.5 rounded-full border border-warm-border">
                           {product.category}
                         </span>
                       </td>
-                      <td className="py-3 px-4 font-mono text-stone-600">
+                      <td className="py-3 px-4 font-mono text-mocha">
                         {product.sku || `GG-${product.id}`}
                       </td>
-                      <td className="py-3 px-4 font-mono font-bold text-stone-900">
+                      <td className="py-3 px-4 font-mono font-bold text-espresso">
                         {formatPKR(product.price)}
                       </td>
                       <td className="py-3 px-4 font-mono">
                         {product.stock === 0 ? (
-                          <span className="text-rose-600 font-bold">Out of stock</span>
+                          <span className="text-error font-bold">Out of stock</span>
                         ) : product.stock <= 3 ? (
-                          <span className="text-amber-600 font-semibold">Only {product.stock} left</span>
+                          <span className="text-warning font-semibold">Only {product.stock} left</span>
                         ) : (
-                          <span className="text-stone-700">{product.stock} units</span>
+                          <span className="text-mocha">{product.stock} units</span>
                         )}
                       </td>
                       <td className="py-3 px-4">
@@ -518,13 +518,13 @@ export const ProductsPage: React.FC = () => {
                           aria-label={`Toggle active status for ${product.name}, currently ${isActive ? 'Active' : 'Draft'}`}
                           className={`inline-flex items-center gap-1.5 text-xs font-semibold px-2 py-0.5 rounded-full transition-colors cursor-pointer ${
                             isActive
-                              ? 'text-emerald-700 bg-emerald-50'
-                              : 'text-stone-600 bg-stone-100'
+                              ? 'text-success bg-emerald-50'
+                              : 'text-mocha bg-surface-soft'
                           }`}
                         >
                           <span
                             className={`w-2 h-2 rounded-full ${
-                              isActive ? 'bg-emerald-500' : 'bg-stone-400'
+                              isActive ? 'bg-success' : 'bg-muted-taupe'
                             }`}
                           />
                           <span>{isActive ? 'Active' : 'Draft'}</span>
@@ -534,7 +534,7 @@ export const ProductsPage: React.FC = () => {
                         <div className="flex items-center justify-end gap-1">
                           <Link
                             to={`/admin/products/${product.id}/edit`}
-                            className="p-1.5 text-stone-500 hover:text-primary hover:bg-rose-50 rounded-lg transition-colors"
+                            className="p-1.5 text-muted-taupe hover:text-mocha hover:bg-surface-soft rounded-lg transition-colors"
                             title="Edit"
                             aria-label={`Edit ${product.name}`}
                           >
@@ -543,7 +543,7 @@ export const ProductsPage: React.FC = () => {
                           <button
                             type="button"
                             onClick={() => setProductToDelete(product)}
-                            className="p-1.5 text-stone-500 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors cursor-pointer"
+                            className="p-1.5 text-muted-taupe hover:text-error hover:bg-red-50 rounded-lg transition-colors cursor-pointer"
                             title="Delete"
                             aria-label={`Delete ${product.name}`}
                           >

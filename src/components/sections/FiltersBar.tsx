@@ -52,7 +52,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
     filterState.searchQuery !== '';
 
   return (
-    <div className="w-full bg-white rounded-2xl border border-rose-100 p-4 sm:p-5 shadow-xs space-y-4">
+    <div className="w-full bg-white rounded-2xl border border-warm-border p-4 sm:p-5 shadow-xs space-y-4">
       {/* Top Bar: Sort dropdown, Filter Toggle, and Total Count */}
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
@@ -61,14 +61,14 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
             onClick={() => setIsExpanded(!isExpanded)}
             className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all border ${
               isExpanded || hasActiveFilters
-                ? 'bg-rose-50 text-primary border-rose-200'
-                : 'bg-stone-50 text-stone-700 border-stone-200 hover:bg-stone-100'
+                ? 'bg-surface-soft text-espresso border-champagne-gold'
+                : 'bg-ivory text-mocha border-warm-border hover:bg-surface-soft'
             }`}
           >
             <SlidersHorizontal className="w-3.5 h-3.5" />
             <span>Filters &amp; Brand Discovery</span>
             {hasActiveFilters && (
-              <span className="w-2 h-2 rounded-full bg-primary" />
+              <span className="w-2 h-2 rounded-full bg-antique-gold" />
             )}
           </button>
 
@@ -76,7 +76,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
             <button
               type="button"
               onClick={onResetFilters}
-              className="inline-flex items-center gap-1 text-xs text-stone-500 hover:text-rose-600 transition-colors"
+              className="inline-flex items-center gap-1 text-xs text-muted-taupe hover:text-error transition-colors"
             >
               <X className="w-3.5 h-3.5" />
               <span>Clear filters</span>
@@ -86,7 +86,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
 
         {/* Sort Dropdown */}
         <div className="flex items-center gap-2">
-          <label htmlFor="sort-select" className="text-xs text-stone-500 flex items-center gap-1">
+          <label htmlFor="sort-select" className="text-xs text-muted-taupe flex items-center gap-1">
             <ArrowUpDown className="w-3 h-3" />
             <span>Sort by:</span>
           </label>
@@ -96,7 +96,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
             onChange={(e) =>
               onFilterChange((prev) => ({ ...prev, sortBy: e.target.value as SortOption }))
             }
-            className="px-3 py-1.5 rounded-xl border border-stone-200 bg-white text-xs font-medium text-stone-800 focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer"
+            className="px-3 py-1.5 rounded-xl border border-warm-border bg-white text-xs font-medium text-mocha focus:outline-none focus:ring-1 focus:ring-antique-gold cursor-pointer"
           >
             {sortOptions.map((opt) => (
               <option key={opt.value} value={opt.value}>
@@ -109,11 +109,11 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
 
       {/* Expanded Filter Panel */}
       {isExpanded && (
-        <div className="pt-4 border-t border-rose-100 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs animate-in fade-in duration-200">
+        <div className="pt-4 border-t border-warm-border grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs animate-in fade-in duration-200">
           
           {/* 1. Brand Filter */}
           <div className="space-y-2">
-            <h4 className="font-semibold text-stone-900 font-mono uppercase tracking-wider text-[11px]">
+            <h4 className="font-semibold text-espresso font-mono uppercase tracking-wider text-[11px]">
               Brand Collection ({availableBrands.length})
             </h4>
             <div className="max-h-36 overflow-y-auto space-y-1.5 pr-2">
@@ -122,13 +122,13 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
                 return (
                   <label
                     key={brand}
-                    className="flex items-center gap-2 text-stone-700 hover:text-stone-900 cursor-pointer"
+                    className="flex items-center gap-2 text-mocha hover:text-espresso cursor-pointer"
                   >
                     <input
                       type="checkbox"
                       checked={checked}
                       onChange={() => handleBrandToggle(brand)}
-                      className="rounded border-stone-300 text-primary focus:ring-primary"
+                      className="rounded border-warm-border text-antique-gold focus:ring-antique-gold"
                     />
                     <span className="truncate">{brand}</span>
                   </label>
@@ -139,7 +139,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
 
           {/* 2. Price Range */}
           <div className="space-y-2">
-            <h4 className="font-semibold text-stone-900 font-mono uppercase tracking-wider text-[11px]">
+            <h4 className="font-semibold text-espresso font-mono uppercase tracking-wider text-[11px]">
               Price Range (PKR)
             </h4>
             <div className="flex items-center gap-2">
@@ -150,9 +150,9 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
                 onChange={(e) =>
                   onFilterChange((prev) => ({ ...prev, minPrice: Number(e.target.value) || 0 }))
                 }
-                className="w-full px-2.5 py-1.5 rounded-lg border border-stone-200 text-xs font-mono"
+                className="w-full px-2.5 py-1.5 rounded-lg border border-warm-border text-xs font-mono"
               />
-              <span className="text-stone-400">&ndash;</span>
+              <span className="text-muted-taupe">&ndash;</span>
               <input
                 type="number"
                 placeholder="Max"
@@ -163,24 +163,24 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
                     maxPrice: Number(e.target.value) || 25000,
                   }))
                 }
-                className="w-full px-2.5 py-1.5 rounded-lg border border-stone-200 text-xs font-mono"
+                className="w-full px-2.5 py-1.5 rounded-lg border border-warm-border text-xs font-mono"
               />
             </div>
-            <p className="text-[10px] text-stone-400">
+            <p className="text-[10px] text-muted-taupe">
               Rs. {filterState.minPrice.toLocaleString()} to Rs. {filterState.maxPrice.toLocaleString()}
             </p>
           </div>
 
           {/* 3. Stock Availability */}
           <div className="space-y-2">
-            <h4 className="font-semibold text-stone-900 font-mono uppercase tracking-wider text-[11px]">
+            <h4 className="font-semibold text-espresso font-mono uppercase tracking-wider text-[11px]">
               Availability
             </h4>
             <div className="flex flex-col gap-1.5">
               {availabilityOptions.map((opt) => (
                 <label
                   key={opt.value}
-                  className="flex items-center gap-2 text-stone-700 hover:text-stone-900 cursor-pointer"
+                  className="flex items-center gap-2 text-mocha hover:text-espresso cursor-pointer"
                 >
                   <input
                     type="radio"
@@ -189,7 +189,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
                     onChange={() =>
                       onFilterChange((prev) => ({ ...prev, availability: opt.value }))
                     }
-                    className="text-primary focus:ring-primary"
+                    className="text-antique-gold focus:ring-antique-gold"
                   />
                   <span>{opt.label}</span>
                 </label>
@@ -199,36 +199,36 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
 
           {/* 4. Special Merchandising: Discounts & Bundles */}
           <div className="space-y-2">
-            <h4 className="font-semibold text-stone-900 font-mono uppercase tracking-wider text-[11px]">
+            <h4 className="font-semibold text-espresso font-mono uppercase tracking-wider text-[11px]">
               Promotions &amp; Bundles
             </h4>
             <div className="space-y-2 pt-0.5">
-              <label className="flex items-center gap-2 text-stone-700 hover:text-stone-900 cursor-pointer">
+              <label className="flex items-center gap-2 text-mocha hover:text-espresso cursor-pointer">
                 <input
                   type="checkbox"
                   checked={filterState.onlyDiscounted}
                   onChange={(e) =>
                     onFilterChange((prev) => ({ ...prev, onlyDiscounted: e.target.checked }))
                   }
-                  className="rounded border-stone-300 text-primary focus:ring-primary"
+                  className="rounded border-warm-border text-antique-gold focus:ring-antique-gold"
                 />
                 <span className="flex items-center gap-1">
-                  <Tag className="w-3.5 h-3.5 text-rose-500" />
+                  <Tag className="w-3.5 h-3.5 text-antique-gold" />
                   <span>On Sale / Discounted only</span>
                 </span>
               </label>
 
-              <label className="flex items-center gap-2 text-stone-700 hover:text-stone-900 cursor-pointer">
+              <label className="flex items-center gap-2 text-mocha hover:text-espresso cursor-pointer">
                 <input
                   type="checkbox"
                   checked={filterState.onlyBundles}
                   onChange={(e) =>
                     onFilterChange((prev) => ({ ...prev, onlyBundles: e.target.checked }))
                   }
-                  className="rounded border-stone-300 text-primary focus:ring-primary"
+                  className="rounded border-warm-border text-antique-gold focus:ring-antique-gold"
                 />
                 <span className="flex items-center gap-1">
-                  <Sparkles className="w-3.5 h-3.5 text-amber-500" />
+                  <Sparkles className="w-3.5 h-3.5 text-champagne-gold" />
                   <span>Kits &amp; Gift Bundles only</span>
                 </span>
               </label>
@@ -240,19 +240,19 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
 
       {/* Active Filter Pills Bar */}
       {hasActiveFilters && (
-        <div className="flex flex-wrap items-center gap-1.5 pt-2 border-t border-rose-50 text-[11px]">
-          <span className="text-stone-400 font-mono mr-1">Active:</span>
+        <div className="flex flex-wrap items-center gap-1.5 pt-2 border-t border-warm-border/60 text-[11px]">
+          <span className="text-muted-taupe font-mono mr-1">Active:</span>
 
           {filterState.selectedBrands.map((b) => (
             <span
               key={b}
-              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-rose-50 text-primary border border-rose-200"
+              className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-soft text-mocha border border-warm-border"
             >
               <span>{b}</span>
               <button
                 type="button"
                 onClick={() => handleBrandToggle(b)}
-                className="hover:text-rose-800"
+                className="hover:text-espresso"
               >
                 &times;
               </button>
@@ -260,7 +260,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
           ))}
 
           {filterState.onlyDiscounted && (
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200">
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-soft text-antique-gold border border-champagne-gold/60">
               <span>Sale items only</span>
               <button
                 type="button"
@@ -272,7 +272,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
           )}
 
           {filterState.onlyBundles && (
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-200">
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-soft text-warning border border-champagne-gold/60">
               <span>Bundles only</span>
               <button
                 type="button"
@@ -284,7 +284,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
           )}
 
           {filterState.availability !== 'all' && (
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-stone-100 text-stone-700">
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-ivory text-mocha">
               <span>Stock: {filterState.availability}</span>
               <button
                 type="button"
@@ -295,7 +295,7 @@ export const FiltersBar: React.FC<FiltersBarProps> = ({
             </span>
           )}
 
-          <span className="ml-auto text-stone-500 font-mono">
+          <span className="ml-auto text-muted-taupe font-mono">
             {totalResults} {totalResults === 1 ? 'match' : 'matches'}
           </span>
         </div>

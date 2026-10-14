@@ -31,7 +31,7 @@ export const Contact: React.FC = () => {
       handle: settings.socials?.instagram || '@glowandgrace.pk',
       icon: InstagramIcon,
       url: 'https://instagram.com',
-      color: 'hover:text-pink-600 hover:border-pink-300',
+      color: 'hover:text-antique-gold hover:border-champagne-gold',
     },
     {
       name: 'Facebook',
@@ -45,24 +45,24 @@ export const Contact: React.FC = () => {
       handle: settings.socials?.tiktok || '@glowandgrace',
       icon: TikTokIcon,
       url: 'https://tiktok.com',
-      color: 'hover:text-black hover:border-stone-400',
+      color: 'hover:text-espresso hover:border-warm-border',
     },
   ];
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-stone-50/70 content-visibility-auto">
+    <section id="contact" className="py-20 lg:py-28 bg-ivory content-visibility-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-4 mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-rose-200/90 text-xs font-semibold text-primary uppercase tracking-wider shadow-xs">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-warm-border text-xs font-semibold text-antique-gold uppercase tracking-wider shadow-xs">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Storefront Concierge</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-espresso">
             Contact &amp; Store Location
           </h2>
-          <p className="text-base text-stone-600">
+          <p className="text-base text-muted-taupe">
             Connect via WhatsApp, direct phone, visit our Lahore physical boutique, or follow our social channels.
           </p>
         </div>
@@ -78,71 +78,71 @@ export const Contact: React.FC = () => {
                 href={`https://wa.me/${whatsappNum}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-5 rounded-2xl bg-white border border-rose-100/90 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all group flex flex-col justify-between"
+                className="p-5 rounded-2xl bg-white border border-warm-border shadow-sm hover:shadow-md hover:border-whatsapp/40 transition-all group flex flex-col justify-between"
               >
-                <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-emerald-500 group-hover:text-white transition-all">
+                <div className="w-10 h-10 rounded-xl bg-emerald-50 text-whatsapp flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-whatsapp group-hover:text-white transition-all">
                   <MessageCircle className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-mono uppercase text-emerald-600 font-bold">Fastest Response</span>
-                  <h4 className="font-serif text-base font-semibold text-stone-900 mt-0.5">WhatsApp Chat</h4>
-                  <p className="text-xs text-stone-500 font-mono mt-1">+{whatsappNum}</p>
+                  <span className="text-[11px] font-mono uppercase text-whatsapp font-bold">Fastest Response</span>
+                  <h4 className="font-serif text-base font-semibold text-espresso mt-0.5">WhatsApp Chat</h4>
+                  <p className="text-xs text-muted-taupe font-mono mt-1">+{whatsappNum}</p>
                 </div>
               </a>
 
               <a
                 href={`tel:+${whatsappNum}`}
-                className="p-5 rounded-2xl bg-white border border-rose-100/90 shadow-sm hover:shadow-md hover:border-rose-300 transition-all group flex flex-col justify-between"
+                className="p-5 rounded-2xl bg-white border border-warm-border shadow-sm hover:shadow-md hover:border-champagne-gold transition-all group flex flex-col justify-between"
               >
-                <div className="w-10 h-10 rounded-xl bg-rose-50 text-primary flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-primary group-hover:text-white transition-all">
+                <div className="w-10 h-10 rounded-xl bg-surface-soft text-antique-gold flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-espresso group-hover:text-white transition-all">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-mono uppercase text-primary font-bold">Store Phone</span>
-                  <h4 className="font-serif text-base font-semibold text-stone-900 mt-0.5">Direct Voice Call</h4>
-                  <p className="text-xs text-stone-500 font-mono mt-1">{phoneNum}</p>
+                  <span className="text-[11px] font-mono uppercase text-antique-gold font-bold">Store Phone</span>
+                  <h4 className="font-serif text-base font-semibold text-espresso mt-0.5">Direct Voice Call</h4>
+                  <p className="text-xs text-muted-taupe font-mono mt-1">{phoneNum}</p>
                 </div>
               </a>
             </div>
 
             {/* Address & Hours Detail Card */}
-            <div className="p-6 rounded-2xl bg-white border border-rose-100/90 shadow-sm space-y-4">
+            <div className="p-6 rounded-2xl bg-white border border-warm-border shadow-sm space-y-4">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-antique-gold shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-semibold text-stone-900">Physical Store Location</h4>
-                  <p className="text-xs sm:text-sm text-stone-600 mt-0.5">
+                  <h4 className="text-sm font-semibold text-espresso">Physical Store Location</h4>
+                  <p className="text-xs sm:text-sm text-muted-taupe mt-0.5">
                     {fullAddress}
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 pt-3 border-t border-rose-100/60">
-                <Clock className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+              <div className="flex items-start gap-3 pt-3 border-t border-warm-border/70">
+                <Clock className="w-5 h-5 text-antique-gold shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-semibold text-stone-900">Operating Schedule</h4>
-                  <p className="text-xs text-stone-600 mt-0.5">
+                  <h4 className="text-sm font-semibold text-espresso">Operating Schedule</h4>
+                  <p className="text-xs text-mocha mt-0.5">
                     Mon &ndash; Sat: 10:00 AM &ndash; 9:00 PM (PKT)
                   </p>
-                  <p className="text-xs text-stone-500">
+                  <p className="text-xs text-muted-taupe">
                     Sun: 2:00 PM &ndash; 8:00 PM (Online Concierge)
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 pt-3 border-t border-rose-100/60">
-                <Mail className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+              <div className="flex items-start gap-3 pt-3 border-t border-warm-border/70">
+                <Mail className="w-5 h-5 text-antique-gold shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-semibold text-stone-900">Concierge Email</h4>
-                  <p className="text-xs text-stone-600 mt-0.5">{settings.email || 'concierge@glowandgrace.pk'}</p>
+                  <h4 className="text-sm font-semibold text-espresso">Concierge Email</h4>
+                  <p className="text-xs text-muted-taupe mt-0.5">{settings.email || 'concierge@glowandgrace.pk'}</p>
                 </div>
               </div>
             </div>
 
             {/* Social Media Channels */}
-            <div className="p-6 rounded-2xl bg-white border border-rose-100/90 shadow-sm space-y-3">
-              <h4 className="font-serif text-base font-semibold text-stone-900">Follow Our Social Channels</h4>
-              <p className="text-xs text-stone-500">
+            <div className="p-6 rounded-2xl bg-white border border-warm-border shadow-sm space-y-3">
+              <h4 className="font-serif text-base font-semibold text-espresso">Follow Our Social Channels</h4>
+              <p className="text-xs text-muted-taupe">
                 Catch new arrivals, vanity swatches, and daily makeup masterclasses:
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1">
@@ -154,11 +154,11 @@ export const Contact: React.FC = () => {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`flex flex-col items-center text-center p-3 rounded-xl border border-stone-200/80 bg-stone-50/50 transition-all ${social.color}`}
+                      className={`flex flex-col items-center text-center p-3 rounded-xl border border-warm-border bg-ivory/70 transition-all ${social.color}`}
                     >
                       <Icon className="w-5 h-5 mb-1" />
-                      <span className="text-xs font-semibold text-stone-900">{social.name}</span>
-                      <span className="text-[10px] text-stone-500 truncate w-full">{social.handle}</span>
+                      <span className="text-xs font-semibold text-espresso">{social.name}</span>
+                      <span className="text-[10px] text-muted-taupe truncate w-full">{social.handle}</span>
                     </a>
                   );
                 })}
@@ -166,10 +166,10 @@ export const Contact: React.FC = () => {
             </div>
 
             {/* Quick Inquiry Form */}
-            <form onSubmit={handleInquirySubmit} className="p-6 rounded-2xl bg-white border border-rose-100/90 shadow-sm space-y-4">
-              <h4 className="font-serif text-lg font-semibold text-stone-900">Send Instant Message</h4>
+            <form onSubmit={handleInquirySubmit} className="p-6 rounded-2xl bg-white border border-warm-border shadow-sm space-y-4">
+              <h4 className="font-serif text-lg font-semibold text-espresso">Send Instant Message</h4>
               <div>
-                <label htmlFor="inquiry-name" className="block text-xs font-medium text-stone-700 mb-1">
+                <label htmlFor="inquiry-name" className="block text-xs font-medium text-mocha mb-1">
                   Your Full Name
                 </label>
                 <input
@@ -179,19 +179,19 @@ export const Contact: React.FC = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Ayesha Khan"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-warm-border text-sm text-espresso placeholder-muted-taupe/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-antique-gold"
                 />
               </div>
 
               <div>
-                <label htmlFor="inquiry-topic" className="block text-xs font-medium text-stone-700 mb-1">
+                <label htmlFor="inquiry-topic" className="block text-xs font-medium text-mocha mb-1">
                   Topic
                 </label>
                 <select
                   id="inquiry-topic"
                   value={topic}
                   onChange={(e) => setTopic(e.target.value)}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 text-sm text-stone-900 bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-warm-border text-sm text-espresso bg-white focus:outline-none focus-visible:ring-2 focus-visible:ring-antique-gold"
                 >
                   <option value="Product Availability">Product Availability</option>
                   <option value="Special Offer GLOW20">Special Offer GLOW20</option>
@@ -202,7 +202,7 @@ export const Contact: React.FC = () => {
               </div>
 
               <div>
-                <label htmlFor="inquiry-note" className="block text-xs font-medium text-stone-700 mb-1">
+                <label htmlFor="inquiry-note" className="block text-xs font-medium text-mocha mb-1">
                   Your Note
                 </label>
                 <textarea
@@ -211,7 +211,7 @@ export const Contact: React.FC = () => {
                   value={note}
                   onChange={(e) => setNote(e.target.value)}
                   placeholder="Tell us what you're looking for..."
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 resize-none"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-warm-border text-sm text-espresso placeholder-muted-taupe/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-antique-gold resize-none"
                 />
               </div>
 
@@ -230,8 +230,8 @@ export const Contact: React.FC = () => {
 
           {/* Right Column: Responsive Google Maps Embed */}
           <div className="lg:col-span-7 h-full">
-            <div className="relative rounded-3xl overflow-hidden border border-rose-200/80 shadow-lg bg-white p-2">
-              <div className="relative w-full h-[460px] lg:h-[720px] rounded-2xl overflow-hidden bg-stone-100">
+            <div className="relative rounded-3xl overflow-hidden border border-warm-border shadow-lg bg-white p-2">
+              <div className="relative w-full h-[460px] lg:h-[720px] rounded-2xl overflow-hidden bg-surface-soft">
                 <iframe
                   title="Glow and Grace Boutique MM Alam Road Lahore Location Map"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13606.398679461125!2d74.34860472421376!3d31.50764121406853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919045a55555555%3A0x123456789abcdef!2sM.M.+Alam+Rd%2C+Gulberg+III%2C+Lahore%2C+Punjab%2C+Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s"
@@ -246,12 +246,12 @@ export const Contact: React.FC = () => {
                 />
                 
                 {/* Floating overlay over map */}
-                <div className="absolute top-4 left-4 right-4 sm:right-auto sm:max-w-xs p-4 rounded-xl backdrop-blur-md bg-white/95 border border-white/80 shadow-md">
-                  <div className="flex items-center gap-2 text-primary font-serif font-bold text-sm">
+                <div className="absolute top-4 left-4 right-4 sm:right-auto sm:max-w-xs p-4 rounded-xl backdrop-blur-md bg-white/95 border border-warm-border shadow-md">
+                  <div className="flex items-center gap-2 text-antique-gold font-serif font-bold text-sm">
                     <Sparkles className="w-4 h-4" />
                     <span>Glow &amp; Grace Flagship Boutique</span>
                   </div>
-                  <p className="text-xs text-stone-600 mt-1">
+                  <p className="text-xs text-muted-taupe mt-1">
                     MM Alam Road, Gulberg III, Lahore. Valet parking &amp; tester vanity lounge available.
                   </p>
                 </div>

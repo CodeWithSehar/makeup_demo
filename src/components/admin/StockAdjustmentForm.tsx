@@ -44,15 +44,15 @@ export const StockAdjustmentForm: React.FC<StockAdjustmentFormProps> = ({
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="Adjust Inventory Stock" maxWidth="md">
       <form onSubmit={handleSubmit} className="space-y-5">
-        <div className="flex items-center gap-3 p-3 rounded-xl bg-stone-50 border border-stone-200">
+        <div className="flex items-center gap-3 p-3 rounded-xl bg-ivory border border-warm-border">
           <img
             src={product.image}
             alt={product.name}
             className="w-12 h-12 rounded-lg object-cover"
           />
           <div>
-            <h4 className="font-semibold text-xs text-stone-900">{product.name}</h4>
-            <p className="text-[11px] text-stone-500 font-mono">
+            <h4 className="font-semibold text-xs text-espresso">{product.name}</h4>
+            <p className="text-[11px] text-muted-taupe font-mono">
               Current Available Stock: <strong>{product.stock} units</strong>
             </p>
           </div>
@@ -68,11 +68,11 @@ export const StockAdjustmentForm: React.FC<StockAdjustmentFormProps> = ({
             }}
             className={`p-3 rounded-xl border flex items-center justify-center gap-2 text-xs font-semibold cursor-pointer transition-all ${
               adjustmentType === 'add'
-                ? 'bg-emerald-50 border-emerald-300 text-emerald-800 ring-1 ring-emerald-300'
-                : 'border-stone-200 text-stone-600 hover:bg-stone-50'
+                ? 'bg-emerald-50 border-emerald-300 text-success ring-1 ring-emerald-300'
+                : 'border-warm-border text-mocha hover:bg-ivory'
             }`}
           >
-            <Plus className="w-4 h-4 text-emerald-600" />
+            <Plus className="w-4 h-4 text-success" />
             <span>Add Units (Restock)</span>
           </button>
 
@@ -84,18 +84,18 @@ export const StockAdjustmentForm: React.FC<StockAdjustmentFormProps> = ({
             }}
             className={`p-3 rounded-xl border flex items-center justify-center gap-2 text-xs font-semibold cursor-pointer transition-all ${
               adjustmentType === 'remove'
-                ? 'bg-rose-50 border-rose-300 text-rose-800 ring-1 ring-rose-300'
-                : 'border-stone-200 text-stone-600 hover:bg-stone-50'
+                ? 'bg-red-50 border-red-300 text-error ring-1 ring-red-300'
+                : 'border-warm-border text-mocha hover:bg-ivory'
             }`}
           >
-            <Minus className="w-4 h-4 text-rose-600" />
+            <Minus className="w-4 h-4 text-error" />
             <span>Deduct Units (Removal)</span>
           </button>
         </div>
 
         {/* Quantity */}
         <div>
-          <label htmlFor="adjustment-quantity-input" className="block text-xs font-semibold text-stone-700 mb-1">
+          <label htmlFor="adjustment-quantity-input" className="block text-xs font-semibold text-mocha mb-1">
             Quantity to {adjustmentType === 'add' ? 'Add' : 'Deduct'}
           </label>
           <input
@@ -105,13 +105,13 @@ export const StockAdjustmentForm: React.FC<StockAdjustmentFormProps> = ({
             max={adjustmentType === 'remove' ? product.stock : 9999}
             value={quantity}
             onChange={(e) => setQuantity(Math.max(1, parseInt(e.target.value, 10) || 1))}
-            className="w-full px-3 py-2 rounded-xl border border-stone-200 text-sm font-bold font-mono focus:outline-none focus:ring-1 focus:ring-primary"
+            className="w-full px-3 py-2 rounded-xl border border-warm-border text-sm font-bold font-mono focus:outline-none focus:ring-1 focus:ring-antique-gold"
           />
         </div>
 
         {/* Reason */}
         <div>
-          <label htmlFor="adjustment-reason-input" className="block text-xs font-semibold text-stone-700 mb-1">
+          <label htmlFor="adjustment-reason-input" className="block text-xs font-semibold text-mocha mb-1">
             Audit Reason for Movement Log
           </label>
           <input
@@ -121,19 +121,19 @@ export const StockAdjustmentForm: React.FC<StockAdjustmentFormProps> = ({
             value={reason}
             onChange={(e) => setReason(e.target.value)}
             placeholder="e.g. Supplier batch received, tester allocated..."
-            className="w-full px-3 py-2 rounded-xl border border-stone-200 text-xs focus:outline-none focus:ring-1 focus:ring-primary"
+            className="w-full px-3 py-2 rounded-xl border border-warm-border text-xs focus:outline-none focus:ring-1 focus:ring-antique-gold"
           />
         </div>
 
         {/* Projected Stock Preview */}
-        <div className="p-3 rounded-xl bg-rose-50/60 border border-rose-100 flex items-center justify-between text-xs">
-          <span className="text-stone-600 font-medium">New Projected Stock:</span>
-          <span className="font-mono font-bold text-primary text-sm">
+        <div className="p-3 rounded-xl bg-surface-soft/70 border border-warm-border flex items-center justify-between text-xs">
+          <span className="text-muted-taupe font-medium">New Projected Stock:</span>
+          <span className="font-mono font-bold text-mocha text-sm">
             {newProjectedStock} units
           </span>
         </div>
 
-        <div className="flex items-center justify-end gap-3 pt-3 border-t border-stone-100">
+        <div className="flex items-center justify-end gap-3 pt-3 border-t border-warm-border">
           <Button variant="outline" size="sm" type="button" onClick={onClose} disabled={isSubmitting}>
             Cancel
           </Button>

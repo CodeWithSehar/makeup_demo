@@ -36,7 +36,7 @@ export const OrdersPage: React.FC = () => {
       />
 
       {/* Filter Tabs */}
-      <div className="flex flex-wrap items-center gap-2 border-b border-stone-200 pb-3 text-xs font-semibold">
+      <div className="flex flex-wrap items-center gap-2 border-b border-warm-border pb-3 text-xs font-semibold">
         {['all', 'pending', 'confirmed', 'dispatched', 'delivered', 'cancelled'].map((st) => (
           <button
             key={st}
@@ -44,8 +44,8 @@ export const OrdersPage: React.FC = () => {
             onClick={() => setSelectedStatus(st)}
             className={`px-3 py-1.5 rounded-lg capitalize transition-colors cursor-pointer ${
               selectedStatus === st
-                ? 'bg-stone-900 text-white'
-                : 'text-stone-600 hover:bg-stone-100'
+                ? 'bg-espresso text-white'
+                : 'text-mocha hover:bg-surface-soft'
             }`}
           >
             {st} ({orders.filter((o) => (st === 'all' ? true : o.status === st)).length})
@@ -54,10 +54,10 @@ export const OrdersPage: React.FC = () => {
       </div>
 
       {/* Orders Table */}
-      <div className="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-xs">
+      <div className="bg-white rounded-2xl border border-warm-border overflow-hidden shadow-xs">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-stone-50/80 text-stone-500 font-mono text-[11px] border-b border-stone-200">
+            <thead className="bg-ivory/80 text-muted-taupe font-mono text-[11px] border-b border-warm-border">
               <tr>
                 <th className="py-3 px-4">Order ID &amp; Date</th>
                 <th className="py-3 px-4">Customer</th>
@@ -68,39 +68,39 @@ export const OrdersPage: React.FC = () => {
                 <th className="py-3 px-4 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-stone-100">
+            <tbody className="divide-y divide-warm-border/60">
               {filteredOrders.length === 0 ? (
                 <tr>
-                  <td colSpan={7} className="py-12 text-center text-stone-500 text-xs">
+                  <td colSpan={7} className="py-12 text-center text-muted-taupe text-xs">
                     No orders match the selected status filter.
                   </td>
                 </tr>
               ) : (
                 filteredOrders.map((order) => (
-                  <tr key={order.id} className="hover:bg-stone-50/60 transition-colors">
+                  <tr key={order.id} className="hover:bg-ivory/60 transition-colors">
                     <td className="py-3 px-4 font-mono">
-                      <span className="font-bold text-stone-900 block">{order.id}</span>
-                      <span className="text-[10px] text-stone-400">
+                      <span className="font-bold text-espresso block">{order.id}</span>
+                      <span className="text-[10px] text-muted-taupe">
                         {new Date(order.createdAt).toLocaleDateString()}
                       </span>
                     </td>
 
                     <td className="py-3 px-4">
-                      <span className="font-semibold text-stone-900 block">
+                      <span className="font-semibold text-espresso block">
                         {order.customer.name}
                       </span>
-                      <span className="text-[11px] text-stone-500 font-mono">
+                      <span className="text-[11px] text-muted-taupe font-mono">
                         {order.customer.phone}
                       </span>
                     </td>
 
-                    <td className="py-3 px-4 text-stone-600">{order.customer.city}</td>
+                    <td className="py-3 px-4 text-mocha">{order.customer.city}</td>
 
                     <td className="py-3 px-4 font-mono">
                       {order.items.reduce((acc, i) => acc + i.quantity, 0)} items
                     </td>
 
-                    <td className="py-3 px-4 font-mono font-bold text-stone-900">
+                    <td className="py-3 px-4 font-mono font-bold text-espresso">
                       {formatPKR(order.total)}
                     </td>
 
@@ -111,7 +111,7 @@ export const OrdersPage: React.FC = () => {
                         onChange={(e) =>
                           handleStatusChange(order.id, e.target.value as OrderStatus)
                         }
-                        className="px-2.5 py-1 rounded-lg border border-stone-200 bg-white text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-primary cursor-pointer"
+                        className="px-2.5 py-1 rounded-lg border border-warm-border bg-white text-xs font-semibold focus:outline-none focus:ring-1 focus:ring-antique-gold cursor-pointer"
                       >
                         <option value="pending">Pending</option>
                         <option value="confirmed">Confirmed</option>
@@ -125,7 +125,7 @@ export const OrdersPage: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => setActiveOrderModal(order)}
-                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-stone-200 hover:border-primary text-stone-700 hover:text-primary hover:bg-rose-50 text-xs font-semibold transition-all cursor-pointer"
+                        className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-warm-border hover:border-antique-gold text-mocha hover:text-espresso hover:bg-surface-soft text-xs font-semibold transition-all cursor-pointer"
                       >
                         <Eye className="w-3.5 h-3.5" />
                         <span>Details</span>
@@ -149,12 +149,12 @@ export const OrdersPage: React.FC = () => {
         >
           <div className="space-y-6">
             {/* Customer & Shipping info */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-2xl bg-stone-50 border border-stone-200 text-xs">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4 rounded-2xl bg-ivory border border-warm-border text-xs">
               <div className="space-y-1">
-                <span className="text-[10px] font-mono uppercase text-stone-400 font-bold">Customer</span>
-                <p className="font-semibold text-stone-900 text-sm">{activeOrderModal.customer.name}</p>
-                <p className="flex items-center gap-1.5 text-stone-600 font-mono">
-                  <Phone className="w-3.5 h-3.5 text-primary" />
+                <span className="text-[10px] font-mono uppercase text-muted-taupe font-bold">Customer</span>
+                <p className="font-semibold text-espresso text-sm">{activeOrderModal.customer.name}</p>
+                <p className="flex items-center gap-1.5 text-mocha font-mono">
+                  <Phone className="w-3.5 h-3.5 text-antique-gold" />
                   <span>{activeOrderModal.customer.phone}</span>
                 </p>
                 <a
@@ -163,7 +163,7 @@ export const OrdersPage: React.FC = () => {
                   )}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500 hover:bg-[#128C7E] text-white text-[11px] font-semibold transition-colors mt-2"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-whatsapp hover:bg-[#08885D] text-white text-[11px] font-semibold transition-colors mt-2"
                 >
                   <MessageCircle className="w-3.5 h-3.5 fill-white/20" />
                   <span>Chat with Customer</span>
@@ -171,9 +171,9 @@ export const OrdersPage: React.FC = () => {
               </div>
 
               <div className="space-y-1">
-                <span className="text-[10px] font-mono uppercase text-stone-400 font-bold">Shipping Destination</span>
-                <p className="flex items-start gap-1.5 text-stone-700">
-                  <MapPin className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
+                <span className="text-[10px] font-mono uppercase text-muted-taupe font-bold">Shipping Destination</span>
+                <p className="flex items-start gap-1.5 text-mocha">
+                  <MapPin className="w-3.5 h-3.5 text-antique-gold shrink-0 mt-0.5" />
                   <span>
                     {activeOrderModal.customer.address
                       ? `${activeOrderModal.customer.address}, ${activeOrderModal.customer.city}`
@@ -181,7 +181,7 @@ export const OrdersPage: React.FC = () => {
                   </span>
                 </p>
                 {activeOrderModal.customer.note && (
-                  <p className="text-[11px] text-stone-500 italic">
+                  <p className="text-[11px] text-muted-taupe italic">
                     Note: &ldquo;{activeOrderModal.customer.note}&rdquo;
                   </p>
                 )}
@@ -190,14 +190,14 @@ export const OrdersPage: React.FC = () => {
 
             {/* Line Items */}
             <div className="space-y-3">
-              <h4 className="text-xs font-mono uppercase font-bold text-stone-700">
+              <h4 className="text-xs font-mono uppercase font-bold text-mocha">
                 Products in this order
               </h4>
               <div className="space-y-2">
                 {activeOrderModal.items.map((item, idx) => (
                   <div
                     key={idx}
-                    className="flex items-center justify-between p-3 rounded-xl border border-stone-200 text-xs"
+                    className="flex items-center justify-between p-3 rounded-xl border border-warm-border text-xs"
                   >
                     <div className="flex items-center gap-3">
                       <img
@@ -206,13 +206,13 @@ export const OrdersPage: React.FC = () => {
                         className="w-10 h-10 rounded-lg object-cover"
                       />
                       <div>
-                        <span className="font-semibold text-stone-900 block">{item.product.name}</span>
-                        <span className="text-[11px] text-stone-500 font-mono">
+                        <span className="font-semibold text-espresso block">{item.product.name}</span>
+                        <span className="text-[11px] text-muted-taupe font-mono">
                           {item.quantity} x {formatPKR(item.product.price)}
                         </span>
                       </div>
                     </div>
-                    <span className="font-mono font-bold text-stone-900">
+                    <span className="font-mono font-bold text-espresso">
                       {formatPKR(item.product.price * item.quantity)}
                     </span>
                   </div>
@@ -221,31 +221,31 @@ export const OrdersPage: React.FC = () => {
             </div>
 
             {/* Financial Breakdown */}
-            <div className="p-4 rounded-2xl bg-stone-50 border border-stone-200 space-y-1.5 text-xs font-mono">
-              <div className="flex justify-between text-stone-600">
+            <div className="p-4 rounded-2xl bg-ivory border border-warm-border space-y-1.5 text-xs font-mono">
+              <div className="flex justify-between text-mocha">
                 <span>Subtotal:</span>
                 <span>{formatPKR(activeOrderModal.subtotal)}</span>
               </div>
               {activeOrderModal.discount > 0 && (
-                <div className="flex justify-between text-emerald-600 font-bold">
+                <div className="flex justify-between text-success font-bold">
                   <span>Coupon Discount ({activeOrderModal.couponCode}):</span>
                   <span>-{formatPKR(activeOrderModal.discount)}</span>
                 </div>
               )}
-              <div className="flex justify-between text-stone-600">
+              <div className="flex justify-between text-mocha">
                 <span>Nationwide Shipping:</span>
                 <span>{activeOrderModal.deliveryFee === 0 ? 'FREE' : formatPKR(activeOrderModal.deliveryFee)}</span>
               </div>
-              <div className="flex justify-between pt-2 border-t border-stone-200 text-sm font-bold text-stone-900">
+              <div className="flex justify-between pt-2 border-t border-warm-border text-sm font-bold text-espresso">
                 <span>Total Amount Payable:</span>
-                <span className="text-primary font-serif">{formatPKR(activeOrderModal.total)}</span>
+                <span className="text-mocha font-serif">{formatPKR(activeOrderModal.total)}</span>
               </div>
             </div>
 
             {/* Status change actions */}
-            <div className="flex items-center justify-between pt-3 border-t border-stone-100">
+            <div className="flex items-center justify-between pt-3 border-t border-warm-border/70">
               <div className="flex items-center gap-2">
-                <span className="text-xs text-stone-500">Current status:</span>
+                <span className="text-xs text-muted-taupe">Current status:</span>
                 <OrderStatusBadge status={activeOrderModal.status} />
               </div>
 
@@ -253,7 +253,7 @@ export const OrdersPage: React.FC = () => {
                 href={`https://wa.me/${activeOrderModal.customer.phone.replace(/[^0-9]/g, '')}?text=Hello%20${encodeURIComponent(activeOrderModal.customer.name)},%20this%20is%20Glow%20%26%20Grace%20regarding%20your%20order%20${activeOrderModal.id}.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-[#128C7E] text-white text-xs font-semibold transition-all inline-flex items-center gap-1.5"
+                className="px-4 py-2 rounded-xl bg-whatsapp hover:bg-[#08885D] text-white text-xs font-semibold transition-all inline-flex items-center gap-1.5"
               >
                 <span>WhatsApp Customer</span>
               </a>

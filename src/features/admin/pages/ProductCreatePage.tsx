@@ -31,7 +31,7 @@ export const ProductCreatePage: React.FC = () => {
         actions={
           <Link
             to="/admin/products"
-            className="inline-flex items-center gap-1.5 text-xs text-stone-600 hover:text-stone-900 font-semibold"
+            className="inline-flex items-center gap-1.5 text-xs text-mocha hover:text-espresso font-semibold"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Products</span>
@@ -39,7 +39,7 @@ export const ProductCreatePage: React.FC = () => {
         }
       />
 
-      <div className="bg-white rounded-3xl border border-stone-200 p-6 sm:p-8 shadow-xs">
+      <div className="bg-white rounded-3xl border border-warm-border p-6 sm:p-8 shadow-xs">
         <ProductForm
           onSubmit={handleSubmit}
           onCancel={() => navigate('/admin/products')}

@@ -47,7 +47,7 @@ export const QuantityInput: React.FC<QuantityInputProps> = ({
 
   return (
     <div
-      className={`inline-flex items-center rounded-full border border-rose-200/90 bg-white/95 p-0.5 shadow-sm ${className}`}
+      className={`inline-flex items-center rounded-full border border-warm-border bg-white/95 p-0.5 shadow-sm ${className}`}
       role="group"
       aria-label="Quantity selector"
     >
@@ -56,7 +56,7 @@ export const QuantityInput: React.FC<QuantityInputProps> = ({
         onClick={handleDecrement}
         disabled={quantity <= min}
         aria-label="Decrease quantity"
-        className={`${btnSize} flex items-center justify-center rounded-full text-stone-600 transition-colors hover:bg-rose-50 hover:text-primary active:bg-rose-100 disabled:cursor-not-allowed disabled:opacity-30 focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:outline-none`}
+        className={`${btnSize} flex items-center justify-center rounded-full text-muted-taupe transition-colors hover:bg-surface-soft hover:text-espresso active:bg-surface-secondary/50 disabled:cursor-not-allowed disabled:opacity-30 focus-visible:ring-2 focus-visible:ring-antique-gold focus-visible:outline-none`}
       >
         <Minus className="h-3.5 w-3.5" />
       </button>
@@ -76,7 +76,7 @@ export const QuantityInput: React.FC<QuantityInputProps> = ({
         onClick={handleIncrement}
         disabled={quantity >= max}
         aria-label="Increase quantity"
-        className={`${btnSize} flex items-center justify-center rounded-full text-stone-600 transition-colors hover:bg-rose-50 hover:text-primary active:bg-rose-100 disabled:cursor-not-allowed disabled:opacity-30 focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:outline-none`}
+        className={`${btnSize} flex items-center justify-center rounded-full text-muted-taupe transition-colors hover:bg-surface-soft hover:text-espresso active:bg-surface-secondary/50 disabled:cursor-not-allowed disabled:opacity-30 focus-visible:ring-2 focus-visible:ring-antique-gold focus-visible:outline-none`}
       >
         <Plus className="h-3.5 w-3.5" />
       </button>

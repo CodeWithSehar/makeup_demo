@@ -215,23 +215,23 @@ export const ProductForm: React.FC<ProductFormProps> = ({
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {error && (
-        <div className="p-4 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-800 flex items-center justify-between">
+        <div className="p-4 rounded-xl bg-red-50 border border-red-200 text-xs text-error flex items-center justify-between">
           <span>{error}</span>
-          <button type="button" onClick={() => setError(null)} className="text-rose-500 hover:text-rose-700">
+          <button type="button" onClick={() => setError(null)} className="text-error hover:text-red-900">
             <X className="w-4 h-4" />
           </button>
         </div>
       )}
 
       {/* Navigation Tabs matching Reference Image 2 */}
-      <div className="border-b border-stone-200 flex items-center gap-1 sm:gap-4 overflow-x-auto text-xs font-semibold">
+      <div className="border-b border-warm-border flex items-center gap-1 sm:gap-4 overflow-x-auto text-xs font-semibold">
         <button
           type="button"
           onClick={() => setActiveTab('basic')}
           className={`py-3 px-3 border-b-2 transition-all flex items-center gap-1.5 whitespace-nowrap cursor-pointer ${
             activeTab === 'basic'
-              ? 'border-primary text-primary font-bold'
-              : 'border-transparent text-stone-500 hover:text-stone-900'
+              ? 'border-antique-gold text-mocha font-bold'
+              : 'border-transparent text-muted-taupe hover:text-espresso'
           }`}
         >
           <Sparkles className="w-4 h-4" />
@@ -243,8 +243,8 @@ export const ProductForm: React.FC<ProductFormProps> = ({
           onClick={() => setActiveTab('pricing')}
           className={`py-3 px-3 border-b-2 transition-all flex items-center gap-1.5 whitespace-nowrap cursor-pointer ${
             activeTab === 'pricing'
-              ? 'border-primary text-primary font-bold'
-              : 'border-transparent text-stone-500 hover:text-stone-900'
+              ? 'border-antique-gold text-mocha font-bold'
+              : 'border-transparent text-muted-taupe hover:text-espresso'
           }`}
         >
           <DollarSign className="w-4 h-4" />
@@ -256,8 +256,8 @@ export const ProductForm: React.FC<ProductFormProps> = ({
           onClick={() => setActiveTab('images')}
           className={`py-3 px-3 border-b-2 transition-all flex items-center gap-1.5 whitespace-nowrap cursor-pointer ${
             activeTab === 'images'
-              ? 'border-primary text-primary font-bold'
-              : 'border-transparent text-stone-500 hover:text-stone-900'
+              ? 'border-antique-gold text-mocha font-bold'
+              : 'border-transparent text-muted-taupe hover:text-espresso'
           }`}
         >
           <ImageIcon className="w-4 h-4" />
@@ -269,8 +269,8 @@ export const ProductForm: React.FC<ProductFormProps> = ({
           onClick={() => setActiveTab('specs')}
           className={`py-3 px-3 border-b-2 transition-all flex items-center gap-1.5 whitespace-nowrap cursor-pointer ${
             activeTab === 'specs'
-              ? 'border-primary text-primary font-bold'
-              : 'border-transparent text-stone-500 hover:text-stone-900'
+              ? 'border-antique-gold text-mocha font-bold'
+              : 'border-transparent text-muted-taupe hover:text-espresso'
           }`}
         >
           <FileText className="w-4 h-4" />
@@ -280,10 +280,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({
 
       {/* TAB 1: BASIC INFORMATION */}
       {activeTab === 'basic' && (
-        <div className="bg-white rounded-2xl border border-stone-200 p-6 shadow-xs space-y-5 animate-in fade-in">
+        <div className="bg-white rounded-2xl border border-warm-border p-6 shadow-xs space-y-5 animate-in fade-in">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="md:col-span-2">
-              <label htmlFor="productName" className="block text-xs font-semibold text-stone-700 mb-1">
+              <label htmlFor="productName" className="block text-xs font-semibold text-mocha mb-1">
                 Product Title *
               </label>
               <input
@@ -293,12 +293,12 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="e.g. Total Makeover FF Cream or Glow Shimmer Powder"
-                className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary font-serif font-bold text-stone-900"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-warm-border text-xs focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold font-serif font-bold text-espresso"
               />
             </div>
 
             <div>
-              <label htmlFor="brandName" className="block text-xs font-semibold text-stone-700 mb-1">
+              <label htmlFor="brandName" className="block text-xs font-semibold text-mocha mb-1">
                 Brand / Collection Name *
               </label>
               <input
@@ -308,12 +308,12 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
                 placeholder="e.g. Glow & Grace / Charlotte Luxe / Huda Beauty"
-                className="w-full px-3.5 py-2 rounded-xl border border-stone-200 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                className="w-full px-3.5 py-2 rounded-xl border border-warm-border text-xs focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold"
               />
             </div>
 
             <div>
-              <label htmlFor="categorySelect" className="block text-xs font-semibold text-stone-700 mb-1">
+              <label htmlFor="categorySelect" className="block text-xs font-semibold text-mocha mb-1">
                 Category / Department *
               </label>
               <select
@@ -324,7 +324,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                   setCategory(val);
                   if (val === 'Bundles & Kits') setIsBundle(true);
                 }}
-                className="w-full px-3.5 py-2 rounded-xl border border-stone-200 text-xs bg-white focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary cursor-pointer"
+                className="w-full px-3.5 py-2 rounded-xl border border-warm-border text-xs bg-white focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold cursor-pointer"
               >
                 {CATEGORIES.map((cat) => (
                   <option key={cat} value={cat}>
@@ -335,7 +335,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
             </div>
 
             <div>
-              <label htmlFor="skuCode" className="block text-xs font-semibold text-stone-700 mb-1">
+              <label htmlFor="skuCode" className="block text-xs font-semibold text-mocha mb-1">
                 SKU / Barcode Code
               </label>
               <div className="flex gap-2">
@@ -345,12 +345,12 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                   value={sku}
                   onChange={(e) => setSku(e.target.value)}
                   placeholder="e.g. GG-8906095882250"
-                  className="flex-1 px-3.5 py-2 rounded-xl border border-stone-200 text-xs font-mono font-semibold text-stone-800 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                  className="flex-1 px-3.5 py-2 rounded-xl border border-warm-border text-xs font-mono font-semibold text-espresso focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold"
                 />
                 <button
                   type="button"
                   onClick={generateNewSku}
-                  className="p-2 border border-stone-200 hover:bg-stone-50 rounded-xl text-stone-600 transition-colors"
+                  className="p-2 border border-warm-border hover:bg-ivory rounded-xl text-mocha transition-colors"
                   title="Generate new SKU"
                 >
                   <RefreshCw className="w-4 h-4" />
@@ -359,7 +359,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
             </div>
 
             <div>
-              <label htmlFor="badgeText" className="block text-xs font-semibold text-stone-700 mb-1">
+              <label htmlFor="badgeText" className="block text-xs font-semibold text-mocha mb-1">
                 Promotional Pill Badge (Optional)
               </label>
               <input
@@ -368,12 +368,12 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 value={badge}
                 onChange={(e) => setBadge(e.target.value)}
                 placeholder="e.g. Bestseller / New / Award Winner / Limited Edition"
-                className="w-full px-3.5 py-2 rounded-xl border border-stone-200 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                className="w-full px-3.5 py-2 rounded-xl border border-warm-border text-xs focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold"
               />
             </div>
 
             <div className="md:col-span-2 pt-2">
-              <label htmlFor="productDesc" className="block text-xs font-semibold text-stone-700 mb-1">
+              <label htmlFor="productDesc" className="block text-xs font-semibold text-mocha mb-1">
                 Product Description *
               </label>
               <textarea
@@ -383,7 +383,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder="Describe texture, skin feel, key pigment coverage, botanical extracts, and application method..."
-                className="w-full px-3.5 py-2.5 rounded-xl border border-stone-200 text-xs leading-relaxed focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-warm-border text-xs leading-relaxed focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold"
               />
             </div>
           </div>
@@ -392,10 +392,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({
 
       {/* TAB 2: PRICING & INVENTORY */}
       {activeTab === 'pricing' && (
-        <div className="bg-white rounded-2xl border border-stone-200 p-6 shadow-xs space-y-6 animate-in fade-in">
+        <div className="bg-white rounded-2xl border border-warm-border p-6 shadow-xs space-y-6 animate-in fade-in">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
             <div>
-              <label htmlFor="sellingPrice" className="block text-xs font-semibold text-stone-700 mb-1">
+              <label htmlFor="sellingPrice" className="block text-xs font-semibold text-mocha mb-1">
                 Selling Price (PKR) *
               </label>
               <input
@@ -406,13 +406,13 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 step="50"
                 value={price}
                 onChange={(e) => handlePriceChange(Number(e.target.value))}
-                className="w-full px-3.5 py-2 rounded-xl border border-stone-200 text-xs font-mono font-bold text-stone-900 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                className="w-full px-3.5 py-2 rounded-xl border border-warm-border text-xs font-mono font-bold text-espresso focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold"
               />
-              <p className="text-[11px] text-stone-400 mt-1">Customer checkout price: {formatPKR(price)}</p>
+              <p className="text-[11px] text-muted-taupe mt-1">Customer checkout price: {formatPKR(price)}</p>
             </div>
 
             <div>
-              <label htmlFor="origPrice" className="block text-xs font-semibold text-stone-700 mb-1">
+              <label htmlFor="origPrice" className="block text-xs font-semibold text-mocha mb-1">
                 Original Price (Strikethrough)
               </label>
               <input
@@ -423,13 +423,13 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 value={originalPrice || ''}
                 onChange={(e) => handleOriginalPriceChange(Number(e.target.value) || undefined)}
                 placeholder="e.g. 3500"
-                className="w-full px-3.5 py-2 rounded-xl border border-stone-200 text-xs font-mono text-stone-700 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                className="w-full px-3.5 py-2 rounded-xl border border-warm-border text-xs font-mono text-mocha focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold"
               />
-              <p className="text-[11px] text-stone-400 mt-1">Shows before-discount comparison</p>
+              <p className="text-[11px] text-muted-taupe mt-1">Shows before-discount comparison</p>
             </div>
 
             <div>
-              <label htmlFor="discountPct" className="block text-xs font-semibold text-stone-700 mb-1">
+              <label htmlFor="discountPct" className="block text-xs font-semibold text-mocha mb-1">
                 Discount Percentage (% Off)
               </label>
               <input
@@ -440,15 +440,15 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 value={discountPercentage || ''}
                 onChange={(e) => setDiscountPercentage(Number(e.target.value) || undefined)}
                 placeholder="Auto-calculated"
-                className="w-full px-3.5 py-2 rounded-xl border border-stone-200 text-xs font-mono text-stone-700 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                className="w-full px-3.5 py-2 rounded-xl border border-warm-border text-xs font-mono text-mocha focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold"
               />
-              <p className="text-[11px] text-rose-600 font-semibold mt-1">
+              <p className="text-[11px] text-antique-gold font-semibold mt-1">
                 {discountPercentage ? `${discountPercentage}% OFF badge on storefront` : 'No discount applied'}
               </p>
             </div>
 
             <div>
-              <label htmlFor="stockUnits" className="block text-xs font-semibold text-stone-700 mb-1">
+              <label htmlFor="stockUnits" className="block text-xs font-semibold text-mocha mb-1">
                 Available Stock Units *
               </label>
               <input
@@ -458,29 +458,29 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 min={0}
                 value={stock}
                 onChange={(e) => setStock(Number(e.target.value))}
-                className="w-full px-3.5 py-2 rounded-xl border border-stone-200 text-xs font-mono font-bold text-stone-900 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                className="w-full px-3.5 py-2 rounded-xl border border-warm-border text-xs font-mono font-bold text-espresso focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold"
               />
-              <p className="text-[11px] text-stone-400 mt-1">
+              <p className="text-[11px] text-muted-taupe mt-1">
                 {stock === 0 ? 'Out of Stock' : stock <= 3 ? `Only ${stock} left alert` : 'In Stock'}
               </p>
             </div>
           </div>
 
           {/* Visibility & Merchandising Options */}
-          <div className="pt-4 border-t border-stone-100 grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="p-4 rounded-xl bg-stone-50 border border-stone-200 flex items-center justify-between">
+          <div className="pt-4 border-t border-warm-border/70 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 rounded-xl bg-ivory border border-warm-border flex items-center justify-between">
               <div>
-                <h4 className="text-xs font-bold text-stone-900">Storefront Publication Status</h4>
-                <p className="text-[11px] text-stone-500">
+                <h4 className="text-xs font-bold text-espresso">Storefront Publication Status</h4>
+                <p className="text-[11px] text-muted-taupe">
                   {status === 'published' ? 'Visible immediately to customers' : 'Hidden as draft catalog item'}
                 </p>
               </div>
-              <div className="flex items-center gap-1 bg-white p-1 rounded-lg border border-stone-200">
+              <div className="flex items-center gap-1 bg-white p-1 rounded-lg border border-warm-border">
                 <button
                   type="button"
                   onClick={() => setStatus('published')}
                   className={`px-3 py-1 rounded text-xs font-semibold transition-all cursor-pointer ${
-                    status === 'published' ? 'bg-emerald-600 text-white' : 'text-stone-600 hover:text-stone-900'
+                    status === 'published' ? 'bg-success text-white' : 'text-mocha hover:text-espresso'
                   }`}
                 >
                   Published
@@ -489,7 +489,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                   type="button"
                   onClick={() => setStatus('draft')}
                   className={`px-3 py-1 rounded text-xs font-semibold transition-all cursor-pointer ${
-                    status === 'draft' ? 'bg-stone-800 text-white' : 'text-stone-600 hover:text-stone-900'
+                    status === 'draft' ? 'bg-espresso text-white' : 'text-mocha hover:text-espresso'
                   }`}
                 >
                   Draft
@@ -497,10 +497,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-stone-50 border border-stone-200 flex items-center justify-between">
+            <div className="p-4 rounded-xl bg-ivory border border-warm-border flex items-center justify-between">
               <div>
-                <h4 className="text-xs font-bold text-stone-900">Featured On Home Showcase</h4>
-                <p className="text-[11px] text-stone-500">Highlight in top bestseller carousel</p>
+                <h4 className="text-xs font-bold text-espresso">Featured On Home Showcase</h4>
+                <p className="text-[11px] text-muted-taupe">Highlight in top bestseller carousel</p>
               </div>
               <label aria-label="Featured on Home Showcase" className="relative inline-flex items-center cursor-pointer">
                 <input
@@ -509,14 +509,14 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                   onChange={(e) => setIsFeatured(e.target.checked)}
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-stone-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-stone-300 after:border after:rounded-full after:h-5 after:width-5 after:transition-all peer-checked:bg-primary" />
+                <div className="w-11 h-6 bg-warm-border peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-warm-border after:border after:rounded-full after:h-5 after:width-5 after:transition-all peer-checked:bg-antique-gold" />
               </label>
             </div>
 
-            <div className="p-4 rounded-xl bg-stone-50 border border-stone-200 flex items-center justify-between md:col-span-2">
+            <div className="p-4 rounded-xl bg-ivory border border-warm-border flex items-center justify-between md:col-span-2">
               <div>
-                <h4 className="text-xs font-bold text-stone-900">New Arrival Badge</h4>
-                <p className="text-[11px] text-stone-500">Display &ldquo;New Arrival&rdquo; tag on storefront catalog</p>
+                <h4 className="text-xs font-bold text-espresso">New Arrival Badge</h4>
+                <p className="text-[11px] text-muted-taupe">Display &ldquo;New Arrival&rdquo; tag on storefront catalog</p>
               </div>
               <label aria-label="New Arrival Badge" className="relative inline-flex items-center cursor-pointer">
                 <input
@@ -525,7 +525,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                   onChange={(e) => setIsNewArrival(e.target.checked)}
                   className="sr-only peer"
                 />
-                <div className="w-11 h-6 bg-stone-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-stone-300 after:border after:rounded-full after:h-5 after:width-5 after:transition-all peer-checked:bg-emerald-600" />
+                <div className="w-11 h-6 bg-warm-border peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-warm-border after:border after:rounded-full after:h-5 after:width-5 after:transition-all peer-checked:bg-success" />
               </label>
             </div>
           </div>
@@ -534,10 +534,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({
 
       {/* TAB 3: UPLOAD IMAGES (Matching Reference Image 2) */}
       {activeTab === 'images' && (
-        <div className="bg-white rounded-2xl border border-stone-200 p-6 shadow-xs space-y-6 animate-in fade-in">
+        <div className="bg-white rounded-2xl border border-warm-border p-6 shadow-xs space-y-6 animate-in fade-in">
           <div>
-            <h3 className="text-sm font-bold text-stone-900">Upload Product Images</h3>
-            <p className="text-xs text-stone-500">
+            <h3 className="text-sm font-bold text-espresso">Upload Product Images</h3>
+            <p className="text-xs text-muted-taupe">
               Select or drag image files from your computer. Immediate local preview is enabled.
             </p>
           </div>
@@ -557,8 +557,8 @@ export const ProductForm: React.FC<ProductFormProps> = ({
             }}
             className={`border-2 border-dashed rounded-2xl p-8 text-center cursor-pointer transition-all flex flex-col items-center justify-center gap-3 ${
               isDragging
-                ? 'border-primary bg-rose-50/50 scale-[1.01]'
-                : 'border-stone-300 hover:border-primary hover:bg-rose-50/20'
+                ? 'border-antique-gold bg-surface-soft/50 scale-[1.01]'
+                : 'border-warm-border hover:border-antique-gold hover:bg-surface-soft/20'
             }`}
           >
             <input
@@ -569,15 +569,15 @@ export const ProductForm: React.FC<ProductFormProps> = ({
               className="sr-only"
               onChange={(e) => handleFileUpload(e.target.files)}
             />
-            <div className="w-12 h-12 rounded-full bg-rose-50 text-primary flex items-center justify-center shadow-xs">
+            <div className="w-12 h-12 rounded-full bg-surface-soft text-antique-gold flex items-center justify-center shadow-xs">
               <Upload className="w-6 h-6" />
             </div>
             <div>
-              <p className="text-xs font-bold text-stone-900">Upload or drag product picture</p>
-              <p className="text-[11px] text-stone-500">PNG, JPG, WEBP &bull; Max file size 5MB</p>
+              <p className="text-xs font-bold text-espresso">Upload or drag product picture</p>
+              <p className="text-[11px] text-muted-taupe">PNG, JPG, WEBP &bull; Max file size 5MB</p>
             </div>
             <span
-              className="px-4 py-1.5 rounded-full bg-stone-900 text-white text-xs font-semibold hover:bg-black transition-all inline-block pointer-events-none"
+              className="px-4 py-1.5 rounded-full bg-espresso text-white text-xs font-semibold hover:bg-mocha transition-all inline-block pointer-events-none"
             >
               Browse Files
             </span>
@@ -585,20 +585,20 @@ export const ProductForm: React.FC<ProductFormProps> = ({
 
           {/* Image Previews Grid matching Reference Image 2 */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold text-stone-800 flex items-center gap-2">
-              <Eye className="w-4 h-4 text-primary" />
+            <h4 className="text-xs font-bold text-espresso flex items-center gap-2">
+              <Eye className="w-4 h-4 text-antique-gold" />
               <span>Image Previews (Active Catalog Images)</span>
             </h4>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-5 gap-3">
               {/* Primary Active Image */}
-              <div className="relative group rounded-xl border-2 border-primary overflow-hidden aspect-square bg-stone-100 shadow-sm">
+              <div className="relative group rounded-xl border-2 border-antique-gold overflow-hidden aspect-square bg-ivory shadow-sm">
                 <img
                   src={image}
                   alt="Product main"
                   className="w-full h-full object-cover object-center"
                 />
-                <span className="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold bg-primary text-white px-1.5 py-0.5 rounded shadow-xs">
+                <span className="absolute top-1.5 left-1.5 text-[9px] font-mono font-bold bg-antique-gold text-white px-1.5 py-0.5 rounded shadow-xs">
                   Main Cover
                 </span>
               </div>
@@ -607,18 +607,18 @@ export const ProductForm: React.FC<ProductFormProps> = ({
               {images.map((imgUrl, idx) => (
                 <div
                   key={`${imgUrl.slice(0, 30)}-${idx}`}
-                  className="relative group rounded-xl border border-stone-200 overflow-hidden aspect-square bg-stone-100"
+                  className="relative group rounded-xl border border-warm-border overflow-hidden aspect-square bg-ivory"
                 >
                   <img
                     src={imgUrl}
                     alt={`Product gallery ${idx + 1}`}
                     className="w-full h-full object-cover object-center"
                   />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1">
+                  <div className="absolute inset-0 bg-espresso/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1">
                     <button
                       type="button"
                       onClick={() => setImage(imgUrl)}
-                      className="p-1 bg-white rounded-md text-[10px] font-semibold text-stone-900 hover:bg-rose-50"
+                      className="p-1 bg-white rounded-md text-[10px] font-semibold text-espresso hover:bg-surface-soft"
                       title="Set as Main"
                     >
                       Cover
@@ -626,7 +626,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                     <button
                       type="button"
                       onClick={() => handleRemoveGalleryImage(idx)}
-                      className="p-1 bg-rose-600 rounded-md text-white hover:bg-rose-700"
+                      className="p-1 bg-error rounded-md text-white hover:bg-red-800"
                       title="Remove"
                     >
                       <Trash2 className="w-3.5 h-3.5" />
@@ -638,14 +638,14 @@ export const ProductForm: React.FC<ProductFormProps> = ({
           </div>
 
           {/* Colour / Shade Swatch Image Upload (Reference Image 2 Feature) */}
-          <div className="pt-4 border-t border-stone-100 space-y-3">
+          <div className="pt-4 border-t border-warm-border/70 space-y-3">
             <div className="flex items-center justify-between">
               <div>
-                <h4 className="text-xs font-bold text-stone-900 flex items-center gap-1.5">
-                  <Palette className="w-4 h-4 text-rose-500" />
+                <h4 className="text-xs font-bold text-espresso flex items-center gap-1.5">
+                  <Palette className="w-4 h-4 text-antique-gold" />
                   <span>Colour / Shade Swatch Image (Optional)</span>
                 </h4>
-                <p className="text-[11px] text-stone-500">
+                <p className="text-[11px] text-muted-taupe">
                   Upload a cosmetic shade swatch photo or pigment swatch
                 </p>
               </div>
@@ -654,7 +654,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 <button
                   type="button"
                   onClick={() => setShadeImage(undefined)}
-                  className="text-xs text-rose-600 hover:underline"
+                  className="text-xs text-error hover:underline"
                 >
                   Remove Swatch
                 </button>
@@ -673,14 +673,14 @@ export const ProductForm: React.FC<ProductFormProps> = ({
               <button
                 type="button"
                 onClick={() => shadeFileInputRef.current?.click()}
-                className="px-4 py-2 rounded-xl border border-stone-300 hover:border-primary text-xs font-semibold text-stone-700 hover:text-primary transition-colors cursor-pointer flex items-center gap-2"
+                className="px-4 py-2 rounded-xl border border-warm-border hover:border-antique-gold text-xs font-semibold text-mocha hover:text-espresso transition-colors cursor-pointer flex items-center gap-2"
               >
                 <Upload className="w-4 h-4" />
                 <span>Upload Swatch Photo</span>
               </button>
 
               {shadeImage && (
-                <div className="w-12 h-12 rounded-xl border border-stone-200 overflow-hidden shadow-xs">
+                <div className="w-12 h-12 rounded-xl border border-warm-border overflow-hidden shadow-xs">
                   <img
                     src={shadeImage}
                     alt="Shade Swatch"
@@ -692,8 +692,8 @@ export const ProductForm: React.FC<ProductFormProps> = ({
           </div>
 
           {/* External URL alternative */}
-          <div className="pt-4 border-t border-stone-100">
-            <label htmlFor="imageUrlInput" className="block text-xs font-semibold text-stone-700 mb-1">
+          <div className="pt-4 border-t border-warm-border/70">
+            <label htmlFor="imageUrlInput" className="block text-xs font-semibold text-mocha mb-1">
               Or Paste External Image URL
             </label>
             <div className="flex gap-2">
@@ -703,13 +703,13 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
                 placeholder="https://images.unsplash.com/..."
-                className="flex-1 px-3.5 py-2 rounded-xl border border-stone-200 text-xs font-mono focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                className="flex-1 px-3.5 py-2 rounded-xl border border-warm-border text-xs font-mono focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold"
               />
               <a
                 href={image}
                 target="_blank"
                 rel="noreferrer"
-                className="px-3 py-2 border border-stone-200 rounded-xl hover:bg-stone-50 text-xs font-semibold text-stone-600 flex items-center gap-1"
+                className="px-3 py-2 border border-warm-border rounded-xl hover:bg-ivory text-xs font-semibold text-mocha flex items-center gap-1"
               >
                 <Eye className="w-3.5 h-3.5" />
                 <span>Test Link</span>
@@ -721,10 +721,10 @@ export const ProductForm: React.FC<ProductFormProps> = ({
 
       {/* TAB 4: SPECIFICATIONS & FORMULA */}
       {activeTab === 'specs' && (
-        <div className="bg-white rounded-2xl border border-stone-200 p-6 shadow-xs space-y-4 animate-in fade-in">
+        <div className="bg-white rounded-2xl border border-warm-border p-6 shadow-xs space-y-4 animate-in fade-in">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="volumeInput" className="block text-xs font-semibold text-stone-700 mb-1">
+              <label htmlFor="volumeInput" className="block text-xs font-semibold text-mocha mb-1">
                 Volume / Weight / Size
               </label>
               <input
@@ -733,12 +733,12 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 value={volumeOrWeight}
                 onChange={(e) => setVolumeOrWeight(e.target.value)}
                 placeholder="e.g. 30ml / 50g / 100ml EDP"
-                className="w-full px-3.5 py-2 rounded-xl border border-stone-200 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                className="w-full px-3.5 py-2 rounded-xl border border-warm-border text-xs focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold"
               />
             </div>
 
             <div>
-              <label htmlFor="shadeNameInput" className="block text-xs font-semibold text-stone-700 mb-1">
+              <label htmlFor="shadeNameInput" className="block text-xs font-semibold text-mocha mb-1">
                 Shade / Tone Name
               </label>
               <input
@@ -747,12 +747,12 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 value={shade}
                 onChange={(e) => setShade(e.target.value)}
                 placeholder="e.g. Velvet Rose 04 / Warm Beige"
-                className="w-full px-3.5 py-2 rounded-xl border border-stone-200 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                className="w-full px-3.5 py-2 rounded-xl border border-warm-border text-xs focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold"
               />
             </div>
 
             <div className="md:col-span-2">
-              <label htmlFor="ingredientsInput" className="block text-xs font-semibold text-stone-700 mb-1">
+              <label htmlFor="ingredientsInput" className="block text-xs font-semibold text-mocha mb-1">
                 Key Active Ingredients
               </label>
               <input
@@ -761,12 +761,12 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 value={ingredients}
                 onChange={(e) => setIngredients(e.target.value)}
                 placeholder="e.g. Hyaluronic Acid, Niacinamide, Rosehip Oil, Squalane"
-                className="w-full px-3.5 py-2 rounded-xl border border-stone-200 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                className="w-full px-3.5 py-2 rounded-xl border border-warm-border text-xs focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold"
               />
             </div>
 
             <div className="md:col-span-2">
-              <label htmlFor="fragranceNotesInput" className="block text-xs font-semibold text-stone-700 mb-1">
+              <label htmlFor="fragranceNotesInput" className="block text-xs font-semibold text-mocha mb-1">
                 Fragrance Notes (For Perfumes &amp; Mists)
               </label>
               <input
@@ -775,12 +775,12 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 value={fragranceNotes}
                 onChange={(e) => setFragranceNotes(e.target.value)}
                 placeholder="e.g. Top: Bergamot; Heart: Turkish Rose; Base: White Oud & Amber"
-                className="w-full px-3.5 py-2 rounded-xl border border-stone-200 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                className="w-full px-3.5 py-2 rounded-xl border border-warm-border text-xs focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold"
               />
             </div>
 
             <div className="md:col-span-2">
-              <label htmlFor="featuresInput" className="block text-xs font-semibold text-stone-700 mb-1">
+              <label htmlFor="featuresInput" className="block text-xs font-semibold text-mocha mb-1">
                 Benefit Tags (Comma-separated)
               </label>
               <input
@@ -789,7 +789,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 value={featuresStr}
                 onChange={(e) => setFeaturesStr(e.target.value)}
                 placeholder="Dermatologist tested, Cruelty free, 24h wear, Alcohol free"
-                className="w-full px-3.5 py-2 rounded-xl border border-stone-200 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                className="w-full px-3.5 py-2 rounded-xl border border-warm-border text-xs focus:outline-none focus:ring-2 focus:ring-antique-gold/20 focus:border-antique-gold"
               />
             </div>
           </div>
@@ -797,11 +797,11 @@ export const ProductForm: React.FC<ProductFormProps> = ({
       )}
 
       {/* Action Footer Bar matching Reference Image 2 */}
-      <div className="bg-white rounded-2xl border border-stone-200 p-4 shadow-xs flex items-center justify-between">
+      <div className="bg-white rounded-2xl border border-warm-border p-4 shadow-xs flex items-center justify-between">
         <button
           type="button"
           onClick={onCancel}
-          className="text-xs font-semibold text-stone-600 hover:text-stone-900 px-4 py-2 cursor-pointer"
+          className="text-xs font-semibold text-muted-taupe hover:text-espresso px-4 py-2 cursor-pointer"
         >
           Cancel
         </button>
@@ -815,7 +815,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 else if (activeTab === 'images') setActiveTab('pricing');
                 else if (activeTab === 'pricing') setActiveTab('basic');
               }}
-              className="px-4 py-2 rounded-full border border-stone-300 text-xs font-semibold text-stone-700 hover:bg-stone-50 transition-colors"
+              className="px-4 py-2 rounded-full border border-warm-border text-xs font-semibold text-mocha hover:bg-ivory transition-colors"
             >
               Previous
             </button>
@@ -829,7 +829,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
                 else if (activeTab === 'pricing') setActiveTab('images');
                 else if (activeTab === 'images') setActiveTab('specs');
               }}
-              className="px-5 py-2 rounded-full bg-stone-900 hover:bg-black text-white text-xs font-semibold transition-colors cursor-pointer"
+              className="px-5 py-2 rounded-full bg-espresso hover:bg-mocha text-white text-xs font-semibold transition-colors cursor-pointer"
             >
               Continue &rarr;
             </button>

@@ -55,21 +55,21 @@ export const Modal: React.FC<ModalProps> = ({
       aria-modal="true"
     >
       <div
-        className="fixed inset-0 bg-stone-900/60 backdrop-blur-sm transition-opacity"
+        className="fixed inset-0 bg-espresso/60 backdrop-blur-sm transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />
 
       <div
-        className={`relative w-full ${maxWidthClass} bg-white rounded-3xl shadow-2xl border border-rose-100 overflow-hidden z-10 my-auto animate-in fade-in zoom-in-95 duration-200`}
+        className={`relative w-full ${maxWidthClass} bg-white rounded-3xl shadow-2xl border border-warm-border overflow-hidden z-10 my-auto animate-in fade-in zoom-in-95 duration-200`}
       >
-        <div className="flex items-center justify-between p-5 border-b border-rose-100/80 bg-stone-50/50">
-          {title && <h3 className="font-serif text-lg font-bold text-stone-900">{title}</h3>}
+        <div className="flex items-center justify-between p-5 border-b border-warm-border/80 bg-ivory/70">
+          {title && <h3 className="font-serif text-lg font-bold text-espresso">{title}</h3>}
           <button
             type="button"
             onClick={onClose}
             aria-label="Close"
-            className="w-8 h-8 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-600 flex items-center justify-center transition-colors ml-auto cursor-pointer"
+            className="w-8 h-8 rounded-full bg-surface-soft hover:bg-surface-secondary/60 text-muted-taupe flex items-center justify-center transition-colors ml-auto cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>

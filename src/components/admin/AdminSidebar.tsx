@@ -35,22 +35,22 @@ export const AdminSidebar: React.FC<{ isOpen?: boolean; onClose?: () => void }> 
 
   return (
     <aside
-      className={`fixed lg:static inset-y-0 left-0 z-40 w-64 bg-stone-900 text-stone-300 flex flex-col justify-between border-r border-stone-800 transition-transform duration-300 ${
+      className={`fixed lg:static inset-y-0 left-0 z-40 w-64 bg-espresso text-surface-secondary flex flex-col justify-between border-r border-mocha transition-transform duration-300 ${
         isOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
       }`}
     >
       <div>
         {/* Brand Header */}
-        <div className="p-6 border-b border-stone-800 flex items-center justify-between">
+        <div className="p-6 border-b border-mocha flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white shadow-sm">
+            <div className="w-8 h-8 rounded-full bg-antique-gold flex items-center justify-center text-white shadow-sm">
               <Sparkles className="w-4 h-4" />
             </div>
             <div>
               <span className="font-serif text-lg font-bold text-white tracking-tight block">
                 Glow &amp; Grace
               </span>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-rose-400 font-semibold block">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-champagne-gold font-semibold block">
                 Admin Portal
               </span>
             </div>
@@ -60,7 +60,7 @@ export const AdminSidebar: React.FC<{ isOpen?: boolean; onClose?: () => void }> 
             <button
               type="button"
               onClick={onClose}
-              className="lg:hidden text-stone-400 hover:text-white p-1"
+              className="lg:hidden text-surface-secondary/70 hover:text-white p-1"
             >
               &times;
             </button>
@@ -80,8 +80,8 @@ export const AdminSidebar: React.FC<{ isOpen?: boolean; onClose?: () => void }> 
                 className={({ isActive }) =>
                   `flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-xs font-medium transition-all ${
                     isActive
-                      ? 'bg-primary text-white shadow-sm shadow-rose-950/20 font-semibold'
-                      : 'text-stone-400 hover:text-white hover:bg-stone-800/60'
+                      ? 'bg-antique-gold text-white shadow-sm shadow-black/20 font-semibold'
+                      : 'text-surface-secondary/80 hover:text-white hover:bg-mocha/60'
                   }`
                 }
               >
@@ -94,23 +94,23 @@ export const AdminSidebar: React.FC<{ isOpen?: boolean; onClose?: () => void }> 
       </div>
 
       {/* Footer Actions */}
-      <div className="p-4 border-t border-stone-800 space-y-2">
+      <div className="p-4 border-t border-mocha space-y-2">
         <NavLink
           to="/"
           target="_blank"
-          className="flex items-center justify-between px-3.5 py-2 rounded-xl text-xs text-stone-400 hover:text-white hover:bg-stone-800 transition-colors"
+          className="flex items-center justify-between px-3.5 py-2 rounded-xl text-xs text-surface-secondary/80 hover:text-white hover:bg-mocha transition-colors"
         >
           <span className="flex items-center gap-2">
-            <ExternalLink className="w-3.5 h-3.5 text-rose-400" />
+            <ExternalLink className="w-3.5 h-3.5 text-champagne-gold" />
             <span>Customer Storefront</span>
           </span>
-          <span className="text-[10px] font-mono bg-stone-800 px-1.5 py-0.5 rounded">Live</span>
+          <span className="text-[10px] font-mono bg-mocha px-1.5 py-0.5 rounded">Live</span>
         </NavLink>
 
         <button
           type="button"
           onClick={handleLogout}
-          className="w-full flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs text-rose-400 hover:text-rose-300 hover:bg-rose-950/20 transition-colors cursor-pointer"
+          className="w-full flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs text-champagne-gold hover:text-white hover:bg-mocha/60 transition-colors cursor-pointer"
         >
           <LogOut className="w-3.5 h-3.5" />
           <span>Sign Out</span>

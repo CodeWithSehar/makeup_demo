@@ -62,14 +62,14 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({
     <div id="categories" className="space-y-8">
       {/* Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-rose-200/90 text-xs font-semibold text-primary uppercase tracking-wider shadow-xs">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-warm-border text-xs font-semibold text-antique-gold uppercase tracking-wider shadow-xs">
           <Sparkles className="w-3.5 h-3.5" />
           <span>Shop by Category</span>
         </div>
-        <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-stone-900">
+        <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-espresso">
           Explore Our Collections
         </h2>
-        <p className="text-sm sm:text-base text-stone-600">
+        <p className="text-sm sm:text-base text-muted-taupe">
           Select a luxury department to filter products, or browse all collections below.
         </p>
       </div>
@@ -85,9 +85,9 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({
               type="button"
               key={card.name}
               onClick={() => handleCategoryClick(card.name)}
-              className={`group relative rounded-3xl overflow-hidden aspect-[4/3] bg-stone-900 cursor-pointer transition-all duration-300 text-left w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 ${
+              className={`group relative rounded-3xl overflow-hidden aspect-[4/3] bg-espresso cursor-pointer transition-all duration-300 text-left w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-antique-gold focus-visible:ring-offset-2 ${
                 isSelected
-                  ? 'ring-3 ring-primary shadow-xl scale-[1.01]'
+                  ? 'ring-3 ring-antique-gold shadow-xl scale-[1.01]'
                   : 'shadow-md hover:shadow-xl hover:-translate-y-0.5'
               }`}
               aria-label={`Browse ${card.name} category`}
@@ -107,7 +107,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({
               />
 
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-stone-950/85 via-stone-950/35 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-espresso/90 via-espresso/35 to-transparent" />
 
               {/* Content */}
               <div className="absolute inset-0 p-6 flex flex-col justify-between">
@@ -117,7 +117,7 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({
                       {count} Items
                     </span>
                     {isSelected && (
-                      <span className="px-2.5 py-1 rounded-full bg-primary text-white text-xs font-semibold flex items-center gap-1 shadow-sm">
+                      <span className="px-2.5 py-1 rounded-full bg-antique-gold text-white text-xs font-semibold flex items-center gap-1 shadow-sm">
                         <Check className="w-3.5 h-3.5" />
                         <span>Selected</span>
                       </span>
@@ -126,8 +126,8 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({
                   <div
                     className={`w-9 h-9 rounded-full backdrop-blur-md text-white flex items-center justify-center transition-all ${
                       isSelected
-                        ? 'bg-primary ring-2 ring-white/60'
-                        : 'bg-white/20 group-hover:bg-primary group-hover:scale-110'
+                        ? 'bg-antique-gold ring-2 ring-white/60'
+                        : 'bg-white/20 group-hover:bg-antique-gold group-hover:scale-110'
                     }`}
                   >
                     <ArrowRight className="w-4 h-4" />
@@ -137,12 +137,12 @@ export const FeaturedCategories: React.FC<FeaturedCategoriesProps> = ({
                 <div className="space-y-1">
                   <h3
                     className={`font-serif text-2xl font-bold transition-colors ${
-                      isSelected ? 'text-rose-200' : 'text-white group-hover:text-rose-200'
+                      isSelected ? 'text-surface-secondary' : 'text-white group-hover:text-surface-secondary'
                     }`}
                   >
                     {card.name}
                   </h3>
-                  <p className="text-xs text-stone-300 line-clamp-1">
+                  <p className="text-xs text-surface-soft/80 line-clamp-1">
                     {card.tagline}
                   </p>
                 </div>

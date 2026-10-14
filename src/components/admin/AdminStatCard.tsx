@@ -17,21 +17,21 @@ export const AdminStatCard: React.FC<AdminStatCardProps> = ({
   variant = 'primary',
 }) => {
   const variantStyles = {
-    primary: 'bg-rose-50 text-primary border-rose-100',
-    emerald: 'bg-emerald-50 text-emerald-700 border-emerald-100',
-    amber: 'bg-amber-50 text-amber-700 border-amber-100',
-    stone: 'bg-stone-50 text-stone-800 border-stone-200',
-    rose: 'bg-rose-50 text-rose-700 border-rose-200',
+    primary: 'bg-surface-soft text-antique-gold border-warm-border',
+    emerald: 'bg-emerald-50 text-success border-emerald-100',
+    amber: 'bg-amber-50 text-warning border-amber-100',
+    stone: 'bg-ivory text-mocha border-warm-border',
+    rose: 'bg-red-50 text-error border-red-200',
   }[variant];
 
   return (
-    <div className="bg-white rounded-2xl border border-stone-200 p-5 shadow-xs flex items-center justify-between gap-4">
+    <div className="bg-white rounded-2xl border border-warm-border p-5 shadow-xs flex items-center justify-between gap-4">
       <div className="space-y-1">
-        <span className="text-xs font-mono uppercase text-stone-500 font-semibold tracking-wider block">
+        <span className="text-xs font-mono uppercase text-muted-taupe font-semibold tracking-wider block">
           {label}
         </span>
-        <p className="font-serif text-2xl font-bold text-stone-900">{value}</p>
-        {change && <p className="text-[11px] text-stone-500 font-mono">{change}</p>}
+        <p className="font-serif text-2xl font-bold text-espresso">{value}</p>
+        {change && <p className="text-[11px] text-muted-taupe font-mono">{change}</p>}
       </div>
 
       <div className={`w-12 h-12 rounded-2xl border flex items-center justify-center shrink-0 ${variantStyles}`}>
