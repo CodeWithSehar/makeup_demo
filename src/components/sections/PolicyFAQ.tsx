@@ -51,19 +51,19 @@ export const PolicyFAQ: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="py-20 lg:py-28 bg-white border-t border-rose-100 content-visibility-auto">
+    <section id="faq" className="py-20 lg:py-28 bg-white border-t border-warm-border content-visibility-auto">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto space-y-3 mb-16">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200/80 text-xs font-semibold text-primary uppercase tracking-wider">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-soft border border-warm-border text-xs font-semibold text-antique-gold uppercase tracking-wider">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Transparency &amp; Trust Pillars</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-stone-900">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-espresso">
             Policies &amp; Frequently Asked Questions
           </h2>
-          <p className="text-sm sm:text-base text-stone-600">
+          <p className="text-sm sm:text-base text-muted-taupe">
             Everything you need to know about our sourcing, dispatch times, exchange terms, and concierge orders.
           </p>
         </div>
@@ -75,15 +75,15 @@ export const PolicyFAQ: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="p-6 rounded-2xl bg-stone-50/70 border border-rose-100/80 hover:border-rose-200 transition-all space-y-3"
+                className="p-6 rounded-2xl bg-ivory/80 border border-warm-border hover:border-champagne-gold transition-all space-y-3"
               >
-                <div className="w-10 h-10 rounded-xl bg-white border border-rose-100 text-primary flex items-center justify-center shadow-xs">
+                <div className="w-10 h-10 rounded-xl bg-white border border-warm-border text-antique-gold flex items-center justify-center shadow-xs">
                   <Icon className="w-5 h-5" />
                 </div>
-                <h3 className="font-serif text-base font-bold text-stone-900">{p.title}</h3>
-                <p className="text-xs text-stone-600 leading-relaxed">{p.description}</p>
-                <div className="pt-2 flex items-center gap-1.5 text-[11px] font-semibold text-emerald-700">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                <h3 className="font-serif text-base font-bold text-espresso">{p.title}</h3>
+                <p className="text-xs text-muted-taupe leading-relaxed">{p.description}</p>
+                <div className="pt-2 flex items-center gap-1.5 text-[11px] font-semibold text-success">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-success" />
                   <span>Guaranteed Policy</span>
                 </div>
               </div>
@@ -93,8 +93,8 @@ export const PolicyFAQ: React.FC = () => {
 
         {/* FAQ Accordion */}
         <div className="max-w-3xl mx-auto space-y-3">
-          <h3 className="font-serif text-2xl font-bold text-stone-900 text-center mb-6 flex items-center justify-center gap-2">
-            <HelpCircle className="w-5 h-5 text-primary" />
+          <h3 className="font-serif text-2xl font-bold text-espresso text-center mb-6 flex items-center justify-center gap-2">
+            <HelpCircle className="w-5 h-5 text-antique-gold" />
             <span>Customer Questions Answered</span>
           </h3>
 
@@ -103,26 +103,26 @@ export const PolicyFAQ: React.FC = () => {
             return (
               <div
                 key={index}
-                className="rounded-2xl border border-rose-100 bg-stone-50/50 overflow-hidden transition-all"
+                className="rounded-2xl border border-warm-border bg-ivory/60 overflow-hidden transition-all"
               >
                 <button
                   type="button"
                   onClick={() => setOpenFaqIndex(isOpen ? null : index)}
                   aria-expanded={isOpen}
-                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 text-stone-900 hover:text-primary transition-colors focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:outline-none cursor-pointer"
+                  className="w-full p-4 sm:p-5 text-left flex items-center justify-between gap-4 text-espresso hover:text-mocha transition-colors focus-visible:ring-2 focus-visible:ring-antique-gold focus-visible:outline-none cursor-pointer"
                 >
                   <span className="font-serif text-sm sm:text-base font-semibold">
                     {faq.question}
                   </span>
                   <ChevronDown
-                    className={`w-4 h-4 text-stone-500 transition-transform duration-200 shrink-0 ${
-                      isOpen ? 'rotate-180 text-primary' : ''
+                    className={`w-4 h-4 text-muted-taupe transition-transform duration-200 shrink-0 ${
+                      isOpen ? 'rotate-180 text-antique-gold' : ''
                     }`}
                   />
                 </button>
 
                 {isOpen && (
-                  <div className="px-4 pb-5 sm:px-5 text-xs sm:text-sm text-stone-600 leading-relaxed animate-in fade-in duration-150 border-t border-rose-100/60 pt-3">
+                  <div className="px-4 pb-5 sm:px-5 text-xs sm:text-sm text-muted-taupe leading-relaxed animate-in fade-in duration-150 border-t border-warm-border/70 pt-3">
                     {faq.answer}
                   </div>
                 )}

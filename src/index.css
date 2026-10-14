@@ -17,17 +17,17 @@
 
 /* Accessible focus styling */
 :focus-visible {
-  outline: 2px solid #be185d;
+  outline: 2px solid #A67C52;
   outline-offset: 2px;
 }
 
 /* User-valid / User-invalid modern form patterns */
 input:user-valid:not(:placeholder-shown) {
-  border-color: #10b981;
+  border-color: #287653;
 }
 
 input:user-invalid:not(:placeholder-shown) {
-  border-color: #ef4444;
+  border-color: #B42318;
 }
 
 /* Glassmorphism helpers */

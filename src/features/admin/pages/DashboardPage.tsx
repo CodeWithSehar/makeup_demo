@@ -145,19 +145,19 @@ export const DashboardPage: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
         
         {/* Sales Overview Chart (Sample 7-Day Performance) */}
-        <div className="lg:col-span-8 bg-white rounded-2xl border border-stone-200 p-6 shadow-xs space-y-5">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-100">
+        <div className="lg:col-span-8 bg-white rounded-2xl border border-warm-border p-6 shadow-xs space-y-5">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-warm-border/70">
             <div>
-              <h3 className="font-serif text-base font-bold text-stone-900 flex items-center gap-2">
-                <TrendingUp className="w-4 h-4 text-primary" />
+              <h3 className="font-serif text-base font-bold text-espresso flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-antique-gold" />
                 <span>Weekly Sales Overview</span>
               </h3>
-              <p className="text-xs text-stone-500 font-mono">
+              <p className="text-xs text-muted-taupe font-mono">
                 Recent 7-day revenue trend &amp; order performance
               </p>
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-mono font-bold text-stone-900 bg-rose-50 px-3 py-1 rounded-full border border-rose-200">
+              <span className="text-xs font-mono font-bold text-espresso bg-surface-soft px-3 py-1 rounded-full border border-warm-border">
                 Rs. 176,300 This Week
               </span>
             </div>
@@ -165,26 +165,26 @@ export const DashboardPage: React.FC = () => {
 
           {/* Bar Chart Visualization */}
           <div className="pt-4">
-            <div className="h-44 flex items-end justify-between gap-3 px-2 border-b border-stone-100 pb-2">
+            <div className="h-44 flex items-end justify-between gap-3 px-2 border-b border-warm-border/70 pb-2">
               {salesOverview.map((item) => (
                 <div key={item.day} className="flex-1 flex flex-col items-center gap-2 group">
-                  <div className="text-[10px] font-mono text-stone-500 opacity-0 group-hover:opacity-100 transition-opacity">
+                  <div className="text-[10px] font-mono text-muted-taupe opacity-0 group-hover:opacity-100 transition-opacity">
                     Rs. {(item.revenue / 1000).toFixed(1)}k
                   </div>
-                  <div className="w-full max-w-[38px] bg-stone-100 rounded-t-lg h-32 flex items-end justify-center p-1">
+                  <div className="w-full max-w-[38px] bg-ivory rounded-t-lg h-32 flex items-end justify-center p-1">
                     <div
                       style={{ height: item.height }}
-                      className="w-full bg-gradient-to-t from-primary to-rose-400 rounded-t transition-all group-hover:scale-105"
+                      className="w-full bg-gradient-to-t from-mocha to-antique-gold rounded-t transition-all group-hover:scale-105"
                     />
                   </div>
-                  <span className="text-[11px] font-mono font-semibold text-stone-700">{item.day}</span>
+                  <span className="text-[11px] font-mono font-semibold text-mocha">{item.day}</span>
                 </div>
               ))}
             </div>
 
-            <div className="flex items-center justify-between pt-3 text-xs text-stone-500">
+            <div className="flex items-center justify-between pt-3 text-xs text-muted-taupe">
               <span className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-primary" />
+                <span className="w-2.5 h-2.5 rounded-full bg-antique-gold" />
                 <span>Revenue in PKR</span>
               </span>
               <span className="font-mono text-[11px]">Average order value: Rs. 3,650</span>
@@ -194,84 +194,84 @@ export const DashboardPage: React.FC = () => {
 
         {/* Quick Actions Hub */}
         <div className="lg:col-span-4 space-y-4">
-          <div className="bg-white rounded-2xl border border-stone-200 p-5 shadow-xs space-y-3">
-            <h3 className="font-serif text-base font-bold text-stone-900 flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-primary" />
+          <div className="bg-white rounded-2xl border border-warm-border p-5 shadow-xs space-y-3">
+            <h3 className="font-serif text-base font-bold text-espresso flex items-center gap-2">
+              <Sparkles className="w-4 h-4 text-antique-gold" />
               <span>Quick Actions</span>
             </h3>
             <div className="space-y-2 text-xs">
               <Link
                 to="/admin/products/new"
-                className="flex items-center justify-between p-3 rounded-xl bg-stone-50 hover:bg-rose-50 text-stone-800 hover:text-primary transition-colors border border-stone-100 group"
+                className="flex items-center justify-between p-3 rounded-xl bg-ivory hover:bg-surface-soft text-espresso hover:text-mocha transition-colors border border-warm-border group"
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-7 h-7 rounded-lg bg-rose-100/70 text-primary flex items-center justify-center">
+                  <div className="w-7 h-7 rounded-lg bg-surface-soft text-antique-gold flex items-center justify-center">
                     <Plus className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="font-semibold block">Add New Product</span>
-                    <span className="text-[10px] text-stone-500 block">Upload pictures, prices &amp; SKU</span>
+                    <span className="text-[10px] text-muted-taupe block">Upload pictures, prices &amp; SKU</span>
                   </div>
                 </div>
-                <ArrowRight className="w-4 h-4 text-stone-400 group-hover:translate-x-0.5 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-muted-taupe group-hover:translate-x-0.5 transition-transform" />
               </Link>
 
               <Link
                 to="/admin/inventory"
-                className="flex items-center justify-between p-3 rounded-xl bg-stone-50 hover:bg-amber-50 text-stone-800 hover:text-amber-800 transition-colors border border-stone-100 group"
+                className="flex items-center justify-between p-3 rounded-xl bg-ivory hover:bg-amber-50 text-espresso hover:text-warning transition-colors border border-warm-border group"
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center">
+                  <div className="w-7 h-7 rounded-lg bg-amber-100 text-warning flex items-center justify-center">
                     <Boxes className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="font-semibold block">Manage Inventory</span>
-                    <span className="text-[10px] text-stone-500 block">Adjust stock &amp; low stock alerts</span>
+                    <span className="text-[10px] text-muted-taupe block">Adjust stock &amp; low stock alerts</span>
                   </div>
                 </div>
-                <ArrowRight className="w-4 h-4 text-stone-400 group-hover:translate-x-0.5 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-muted-taupe group-hover:translate-x-0.5 transition-transform" />
               </Link>
 
               <Link
                 to="/admin/orders"
-                className="flex items-center justify-between p-3 rounded-xl bg-stone-50 hover:bg-emerald-50 text-stone-800 hover:text-emerald-800 transition-colors border border-stone-100 group"
+                className="flex items-center justify-between p-3 rounded-xl bg-ivory hover:bg-emerald-50 text-espresso hover:text-success transition-colors border border-warm-border group"
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                  <div className="w-7 h-7 rounded-lg bg-emerald-100 text-success flex items-center justify-center">
                     <Clock className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="font-semibold block">Pending Orders ({pendingOrdersCount})</span>
-                    <span className="text-[10px] text-stone-500 block">Confirm customer WhatsApp orders</span>
+                    <span className="text-[10px] text-muted-taupe block">Confirm customer WhatsApp orders</span>
                   </div>
                 </div>
-                <ArrowRight className="w-4 h-4 text-stone-400 group-hover:translate-x-0.5 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-muted-taupe group-hover:translate-x-0.5 transition-transform" />
               </Link>
 
               <Link
                 to="/admin/settings"
-                className="flex items-center justify-between p-3 rounded-xl bg-stone-50 hover:bg-rose-50 text-stone-800 hover:text-primary transition-colors border border-stone-100 group"
+                className="flex items-center justify-between p-3 rounded-xl bg-ivory hover:bg-surface-soft text-espresso hover:text-mocha transition-colors border border-warm-border group"
               >
                 <div className="flex items-center gap-2.5">
-                  <div className="w-7 h-7 rounded-lg bg-purple-100 text-purple-700 flex items-center justify-center">
+                  <div className="w-7 h-7 rounded-lg bg-surface-soft text-antique-gold flex items-center justify-center">
                     <Sparkles className="w-4 h-4" />
                   </div>
                   <div>
                     <span className="font-semibold block">Store Settings</span>
-                    <span className="text-[10px] text-stone-500 block">Hero copy, WhatsApp &amp; socials</span>
+                    <span className="text-[10px] text-muted-taupe block">Hero copy, WhatsApp &amp; socials</span>
                   </div>
                 </div>
-                <ArrowRight className="w-4 h-4 text-stone-400 group-hover:translate-x-0.5 transition-transform" />
+                <ArrowRight className="w-4 h-4 text-muted-taupe group-hover:translate-x-0.5 transition-transform" />
               </Link>
             </div>
           </div>
 
-          <div className="bg-gradient-to-tr from-stone-900 to-stone-800 text-white p-5 rounded-2xl shadow-xs space-y-2">
-            <div className="flex items-center gap-2 text-rose-300 text-xs font-semibold">
+          <div className="bg-gradient-to-tr from-espresso to-mocha text-white p-5 rounded-2xl shadow-xs space-y-2">
+            <div className="flex items-center gap-2 text-champagne-gold text-xs font-semibold">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
               <span>Real-Time Sync Active</span>
             </div>
-            <p className="text-xs text-stone-300 leading-relaxed">
+            <p className="text-xs text-surface-secondary leading-relaxed">
               Edits made to products, prices, and stock reflect instantly on the customer storefront with zero redeployments.
             </p>
           </div>
@@ -280,15 +280,15 @@ export const DashboardPage: React.FC = () => {
       </div>
 
       {/* Recent Orders Section */}
-      <div className="bg-white rounded-2xl border border-stone-200 overflow-hidden shadow-xs">
-        <div className="p-5 border-b border-stone-100 flex items-center justify-between">
+      <div className="bg-white rounded-2xl border border-warm-border overflow-hidden shadow-xs">
+        <div className="p-5 border-b border-warm-border/70 flex items-center justify-between">
           <div>
-            <h3 className="font-serif text-base font-bold text-stone-900">Recent Customer Orders</h3>
-            <p className="text-xs text-stone-500 font-mono">Consolidated orders via WhatsApp</p>
+            <h3 className="font-serif text-base font-bold text-espresso">Recent Customer Orders</h3>
+            <p className="text-xs text-muted-taupe font-mono">Consolidated orders via WhatsApp</p>
           </div>
           <Link
             to="/admin/orders"
-            className="text-xs font-semibold text-primary hover:underline flex items-center gap-1"
+            className="text-xs font-semibold text-mocha hover:underline flex items-center gap-1"
           >
             <span>View all orders ({orders.length})</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -297,7 +297,7 @@ export const DashboardPage: React.FC = () => {
 
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-stone-50/80 text-stone-500 font-mono text-[11px] border-b border-stone-100">
+            <thead className="bg-ivory/80 text-muted-taupe font-mono text-[11px] border-b border-warm-border/70">
               <tr>
                 <th className="py-3 px-4">Order ID</th>
                 <th className="py-3 px-4">Customer</th>
@@ -307,13 +307,13 @@ export const DashboardPage: React.FC = () => {
                 <th className="py-3 px-4 text-right">Action</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-stone-100">
+            <tbody className="divide-y divide-warm-border/60">
               {orders.slice(0, 5).map((order) => (
-                <tr key={order.id} className="hover:bg-stone-50/60 transition-colors">
-                  <td className="py-3 px-4 font-mono font-bold text-stone-900">{order.id}</td>
-                  <td className="py-3 px-4 text-stone-800 font-medium">{order.customer.name}</td>
-                  <td className="py-3 px-4 text-stone-500">{order.customer.city}</td>
-                  <td className="py-3 px-4 font-mono font-semibold text-stone-900">
+                <tr key={order.id} className="hover:bg-ivory/60 transition-colors">
+                  <td className="py-3 px-4 font-mono font-bold text-espresso">{order.id}</td>
+                  <td className="py-3 px-4 text-mocha font-medium">{order.customer.name}</td>
+                  <td className="py-3 px-4 text-muted-taupe">{order.customer.city}</td>
+                  <td className="py-3 px-4 font-mono font-semibold text-espresso">
                     {formatPKR(order.total)}
                   </td>
                   <td className="py-3 px-4">
@@ -322,7 +322,7 @@ export const DashboardPage: React.FC = () => {
                   <td className="py-3 px-4 text-right">
                     <Link
                       to="/admin/orders"
-                      className="text-primary hover:underline font-semibold text-[11px]"
+                      className="text-mocha hover:underline font-semibold text-[11px]"
                     >
                       Details &rarr;
                     </Link>

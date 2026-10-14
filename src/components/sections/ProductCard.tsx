@@ -38,10 +38,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
 
   return (
     <article
-      className="group relative flex flex-col bg-white rounded-2xl border border-rose-100/90 shadow-sm hover:shadow-xl hover:shadow-rose-950/5 transition-all duration-300 overflow-hidden"
+      className="group relative flex flex-col bg-white rounded-2xl border border-warm-border shadow-sm hover:shadow-xl hover:shadow-stone-900/5 transition-all duration-300 overflow-hidden"
     >
       {/* Aspect-ratio Image Container to eliminate Cumulative Layout Shift (CLS) */}
-      <div className="relative aspect-square w-full overflow-hidden bg-rose-50/50">
+      <div className="relative aspect-square w-full overflow-hidden bg-ivory">
         <img
           src={imageError ? fallbackImage : product.image}
           alt={product.name}
@@ -66,7 +66,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
             )}
           </div>
           {product.discountPercentage && (
-            <span className="self-start inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-rose-600 text-white text-[10px] font-bold tracking-wide shadow-xs">
+            <span className="self-start inline-flex items-center gap-1 px-2 py-0.5 rounded-md bg-antique-gold text-white text-[10px] font-bold tracking-wide shadow-xs">
               <Tag className="w-2.5 h-2.5" />
               <span>{product.discountPercentage}% OFF</span>
             </span>
@@ -79,7 +79,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
             type="button"
             onClick={() => onViewDetails(product)}
             aria-label={`View details for ${product.name}`}
-            className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/90 backdrop-blur-xs text-stone-700 hover:text-primary hover:bg-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 shadow-sm focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-rose-500 cursor-pointer"
+            className="absolute top-3 right-3 z-10 w-8 h-8 rounded-full bg-white/90 backdrop-blur-xs text-mocha hover:text-espresso hover:bg-white flex items-center justify-center transition-all opacity-0 group-hover:opacity-100 shadow-sm focus-visible:opacity-100 focus-visible:ring-2 focus-visible:ring-antique-gold cursor-pointer"
           >
             <Eye className="w-4 h-4" />
           </button>
@@ -88,18 +88,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
         {/* Stock Visibility Pill */}
         <div className="absolute bottom-3 left-3 z-10">
           {isOutOfStock ? (
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-rose-900/85 backdrop-blur-xs text-[11px] font-bold text-white shadow-xs">
-              <XCircle className="w-3 h-3 text-rose-300" />
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-error/90 backdrop-blur-xs text-[11px] font-bold text-white shadow-xs">
+              <XCircle className="w-3 h-3 text-red-200" />
               <span>Out of stock</span>
             </span>
           ) : isLowStock ? (
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-500/95 backdrop-blur-xs text-[11px] font-bold text-white shadow-xs animate-pulse">
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-warning/95 backdrop-blur-xs text-[11px] font-bold text-white shadow-xs animate-pulse">
               <AlertTriangle className="w-3 h-3" />
               <span>Only {product.stock} left</span>
             </span>
           ) : (
-            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-xs text-[11px] font-medium text-emerald-700 shadow-xs border border-emerald-100">
-              <CheckCircle2 className="w-3 h-3 text-emerald-500" />
+            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-xs text-[11px] font-medium text-success shadow-xs border border-emerald-100">
+              <CheckCircle2 className="w-3 h-3 text-success" />
               <span>In stock</span>
             </span>
           )}
@@ -107,8 +107,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
 
         {/* Rating Overlay */}
         {product.rating && (
-          <div className="absolute bottom-3 right-3 z-10 flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/90 backdrop-blur-xs text-[10px] font-semibold text-stone-800 shadow-xs border border-stone-100">
-            <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
+          <div className="absolute bottom-3 right-3 z-10 flex items-center gap-1 px-2 py-0.5 rounded-full bg-white/90 backdrop-blur-xs text-[10px] font-semibold text-espresso shadow-xs border border-warm-border">
+            <Star className="w-3 h-3 fill-champagne-gold text-champagne-gold" />
             <span>{product.rating.toFixed(1)}</span>
           </div>
         )}
@@ -119,40 +119,40 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
         {/* Brand & Title */}
         <div className="space-y-1 flex-1">
           <div className="flex items-center justify-between gap-2">
-            <span className="text-[10px] font-bold uppercase tracking-widest text-primary font-mono truncate">
+            <span className="text-[10px] font-bold uppercase tracking-widest text-antique-gold font-mono truncate">
               {product.brand}
             </span>
             {product.volumeOrWeight && (
-              <span className="text-[10px] font-mono text-stone-400 shrink-0">
+              <span className="text-[10px] font-mono text-muted-taupe shrink-0">
                 {product.volumeOrWeight}
               </span>
             )}
           </div>
 
-          <h3 className="font-serif text-base sm:text-lg font-semibold text-stone-900 group-hover:text-primary transition-colors leading-snug line-clamp-1">
+          <h3 className="font-serif text-base sm:text-lg font-semibold text-espresso group-hover:text-antique-gold transition-colors leading-snug line-clamp-1">
             {product.name}
           </h3>
 
           {product.shade && (
-            <p className="text-[11px] text-rose-800/80 font-medium truncate">
+            <p className="text-[11px] text-mocha/90 font-medium truncate">
               Shade: {product.shade}
             </p>
           )}
 
-          <p className="text-xs text-stone-500 line-clamp-2 leading-relaxed">
+          <p className="text-xs text-muted-taupe line-clamp-2 leading-relaxed">
             {product.description}
           </p>
         </div>
 
         {/* Price & Discount Info */}
-        <div className="pt-2 border-t border-rose-100/60 flex items-baseline justify-between">
+        <div className="pt-2 border-t border-warm-border/70 flex items-baseline justify-between">
           <div className="space-y-0.5">
             <div className="flex items-baseline gap-2">
-              <p className="font-serif text-lg sm:text-xl font-bold text-primary">
+              <p className="font-serif text-lg sm:text-xl font-bold text-mocha">
                 {formatPKR(product.price)}
               </p>
               {product.originalPrice && (
-                <span className="text-xs text-stone-400 line-through font-mono">
+                <span className="text-xs text-muted-taupe/70 line-through font-mono">
                   {formatPKR(product.originalPrice)}
                 </span>
               )}
@@ -161,8 +161,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
 
           {quantity > 1 && !isOutOfStock && (
             <div className="text-right">
-              <span className="text-[10px] text-stone-500 font-mono uppercase tracking-wider">Subtotal:</span>
-              <p className="font-mono text-xs font-semibold text-stone-700">
+              <span className="text-[10px] text-muted-taupe font-mono uppercase tracking-wider">Subtotal:</span>
+              <p className="font-mono text-xs font-semibold text-mocha">
                 {formatPKR(totalPrice)}
               </p>
             </div>
@@ -172,7 +172,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
         {/* Quantity Stepper (Only active if in stock) */}
         {!isOutOfStock ? (
           <div className="flex items-center justify-between pt-1">
-            <span className="text-xs font-medium text-stone-700">Quantity</span>
+            <span className="text-xs font-medium text-mocha">Quantity</span>
             <QuantityInput
               quantity={quantity}
               onChange={setQuantity}
@@ -183,7 +183,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
           </div>
         ) : (
           <div className="py-1 text-center">
-            <span className="text-xs text-stone-400 font-mono italic">
+            <span className="text-xs text-muted-taupe font-mono italic">
               Item temporarily unavailable
             </span>
           </div>
@@ -197,10 +197,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
             disabled={isOutOfStock}
             className={`w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs font-semibold transition-all duration-200 cursor-pointer shadow-xs ${
               isOutOfStock
-                ? 'bg-stone-100 border border-stone-200 text-stone-400 cursor-not-allowed'
+                ? 'bg-ivory border border-warm-border text-muted-taupe cursor-not-allowed'
                 : addedToast
-                ? 'bg-emerald-600 text-white shadow-emerald-600/20'
-                : 'bg-primary hover:bg-primary-dark text-white shadow-rose-900/10 hover:shadow-md'
+                ? 'bg-success text-white shadow-emerald-600/20'
+                : 'bg-espresso hover:bg-mocha text-white shadow-stone-900/10 hover:shadow-md'
             }`}
           >
             {addedToast ? (
@@ -210,7 +210,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
               </>
             ) : isOutOfStock ? (
               <>
-                <XCircle className="w-4 h-4 text-stone-400" />
+                <XCircle className="w-4 h-4 text-muted-taupe" />
                 <span>Out of Stock</span>
               </>
             ) : (
@@ -227,7 +227,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, onViewDetails
           <button
             type="button"
             onClick={() => onViewDetails(product)}
-            className="w-full text-center text-[11px] text-stone-500 hover:text-primary transition-colors pt-1 cursor-pointer"
+            className="w-full text-center text-[11px] text-muted-taupe hover:text-antique-gold transition-colors pt-1 cursor-pointer"
           >
             View full formula &amp; specifications &rarr;
           </button>

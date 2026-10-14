@@ -72,11 +72,11 @@ export const PromotionsPage: React.FC = () => {
           return (
             <div
               key={promo.id}
-              className="bg-white rounded-2xl border border-stone-200 p-6 shadow-xs flex flex-col justify-between space-y-4 hover:border-stone-300 transition-colors"
+              className="bg-white rounded-2xl border border-warm-border p-6 shadow-xs flex flex-col justify-between space-y-4 hover:border-champagne-gold transition-colors"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-xl font-bold tracking-wider text-primary px-3 py-1 bg-rose-50 rounded-lg border border-rose-100">
+                  <span className="font-mono text-xl font-bold tracking-wider text-mocha px-3 py-1 bg-surface-soft rounded-lg border border-warm-border">
                     {promo.code}
                   </span>
                   <button
@@ -84,10 +84,10 @@ export const PromotionsPage: React.FC = () => {
                     onClick={() => handleToggleStatus(promo)}
                     className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold cursor-pointer ${
                       isActive
-                        ? 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+                        ? 'bg-emerald-50 text-success border border-emerald-200'
                         : isScheduled
                         ? 'bg-blue-50 text-blue-700 border border-blue-200'
-                        : 'bg-stone-100 text-stone-500'
+                        : 'bg-ivory text-muted-taupe'
                     }`}
                   >
                     {promo.status.toUpperCase()}
@@ -95,30 +95,30 @@ export const PromotionsPage: React.FC = () => {
                 </div>
 
                 <div>
-                  <h4 className="font-serif text-lg font-bold text-stone-900">
+                  <h4 className="font-serif text-lg font-bold text-espresso">
                     {promo.discountPercentage}% Discount
                   </h4>
-                  <p className="text-xs text-stone-600 leading-relaxed mt-1">
+                  <p className="text-xs text-muted-taupe leading-relaxed mt-1">
                     {promo.description}
                   </p>
                 </div>
 
                 {promo.minOrderAmount && (
-                  <p className="text-[11px] font-mono text-stone-500">
+                  <p className="text-[11px] font-mono text-muted-taupe">
                     Min order requirement: Rs. {promo.minOrderAmount.toLocaleString()}
                   </p>
                 )}
               </div>
 
-              <div className="pt-3 border-t border-stone-100 flex items-center justify-between">
-                <span className="text-[10px] text-stone-400 font-mono">
+              <div className="pt-3 border-t border-warm-border/70 flex items-center justify-between">
+                <span className="text-[10px] text-muted-taupe font-mono">
                   {promo.startDate ? `${promo.startDate} to ${promo.endDate}` : 'No expiry set'}
                 </span>
 
                 <button
                   type="button"
                   onClick={() => deletePromotion(promo.id)}
-                  className="p-1.5 text-stone-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors cursor-pointer"
+                  className="p-1.5 text-muted-taupe hover:text-error hover:bg-red-50 rounded-lg transition-colors cursor-pointer"
                   title="Delete Coupon"
                 >
                   <Trash2 className="w-4 h-4" />
@@ -133,7 +133,7 @@ export const PromotionsPage: React.FC = () => {
       <Modal isOpen={isCreateOpen} onClose={() => setIsCreateOpen(false)} title="Create New Promo Code">
         <form onSubmit={handleCreate} className="space-y-4">
           <div>
-            <label htmlFor="promo-code-input" className="block text-xs font-semibold text-stone-700 mb-1">Coupon Code *</label>
+            <label htmlFor="promo-code-input" className="block text-xs font-semibold text-mocha mb-1">Coupon Code *</label>
             <input
               id="promo-code-input"
               type="text"
@@ -141,13 +141,13 @@ export const PromotionsPage: React.FC = () => {
               value={code}
               onChange={(e) => setCode(e.target.value.toUpperCase())}
               placeholder="e.g. FLASH30"
-              className="w-full px-3 py-2 rounded-xl border border-stone-200 text-xs font-mono font-bold uppercase focus:outline-none focus:ring-1 focus:ring-primary"
+              className="w-full px-3 py-2 rounded-xl border border-warm-border text-xs font-mono font-bold uppercase focus:outline-none focus:ring-1 focus:ring-antique-gold"
             />
           </div>
 
           <div className="grid grid-cols-2 gap-3">
             <div>
-              <label htmlFor="promo-discount-input" className="block text-xs font-semibold text-stone-700 mb-1">Discount % *</label>
+              <label htmlFor="promo-discount-input" className="block text-xs font-semibold text-mocha mb-1">Discount % *</label>
               <input
                 id="promo-discount-input"
                 type="number"
@@ -156,16 +156,16 @@ export const PromotionsPage: React.FC = () => {
                 max={90}
                 value={discountPercentage}
                 onChange={(e) => setDiscountPercentage(Number(e.target.value))}
-                className="w-full px-3 py-2 rounded-xl border border-stone-200 text-xs font-mono font-bold"
+                className="w-full px-3 py-2 rounded-xl border border-warm-border text-xs font-mono font-bold"
               />
             </div>
             <div>
-              <label htmlFor="promo-status-select" className="block text-xs font-semibold text-stone-700 mb-1">Status</label>
+              <label htmlFor="promo-status-select" className="block text-xs font-semibold text-mocha mb-1">Status</label>
               <select
                 id="promo-status-select"
                 value={status}
                 onChange={(e) => setStatus(e.target.value as PromotionStatus)}
-                className="w-full px-3 py-2 rounded-xl border border-stone-200 text-xs bg-white"
+                className="w-full px-3 py-2 rounded-xl border border-warm-border text-xs bg-white"
               >
                 <option value="active">Active Now</option>
                 <option value="scheduled">Scheduled</option>
@@ -175,7 +175,7 @@ export const PromotionsPage: React.FC = () => {
           </div>
 
           <div>
-            <label htmlFor="promo-desc-input" className="block text-xs font-semibold text-stone-700 mb-1">Description</label>
+            <label htmlFor="promo-desc-input" className="block text-xs font-semibold text-mocha mb-1">Description</label>
             <textarea
               id="promo-desc-input"
               rows={2}
@@ -183,12 +183,12 @@ export const PromotionsPage: React.FC = () => {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="e.g. 20% off all perfumes for the weekend"
-              className="w-full px-3 py-2 rounded-xl border border-stone-200 text-xs"
+              className="w-full px-3 py-2 rounded-xl border border-warm-border text-xs"
             />
           </div>
 
           <div>
-            <label htmlFor="promo-min-order-input" className="block text-xs font-semibold text-stone-700 mb-1">Minimum Order Amount (Optional)</label>
+            <label htmlFor="promo-min-order-input" className="block text-xs font-semibold text-mocha mb-1">Minimum Order Amount (Optional)</label>
             <input
               id="promo-min-order-input"
               type="number"
@@ -196,11 +196,11 @@ export const PromotionsPage: React.FC = () => {
               value={minOrderAmount || ''}
               onChange={(e) => setMinOrderAmount(Number(e.target.value) || undefined)}
               placeholder="e.g. 5000"
-              className="w-full px-3 py-2 rounded-xl border border-stone-200 text-xs font-mono"
+              className="w-full px-3 py-2 rounded-xl border border-warm-border text-xs font-mono"
             />
           </div>
 
-          <div className="flex items-center justify-end gap-3 pt-3 border-t border-stone-100">
+          <div className="flex items-center justify-end gap-3 pt-3 border-t border-warm-border">
             <Button variant="outline" size="sm" type="button" onClick={() => setIsCreateOpen(false)}>
               Cancel
             </Button>

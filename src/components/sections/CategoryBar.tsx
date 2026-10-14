@@ -27,10 +27,10 @@ export const CategoryBar: React.FC<CategoryBarProps> = ({
               role="tab"
               aria-selected={isSelected}
               onClick={() => onSelectCategory(cat)}
-              className={`group flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 select-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:outline-none cursor-pointer ${
+              className={`group flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 select-none focus-visible:ring-2 focus-visible:ring-antique-gold focus-visible:outline-none cursor-pointer ${
                 isSelected
-                  ? 'bg-primary text-white shadow-md shadow-rose-300/40 ring-1 ring-primary'
-                  : 'bg-white text-stone-700 hover:bg-rose-50/70 hover:text-primary border border-rose-100 shadow-sm'
+                  ? 'bg-espresso text-white shadow-md shadow-stone-900/15 ring-1 ring-espresso'
+                  : 'bg-white text-mocha hover:bg-surface-soft hover:text-espresso border border-warm-border shadow-sm'
               }`}
             >
               <span>{cat}</span>
@@ -38,7 +38,7 @@ export const CategoryBar: React.FC<CategoryBarProps> = ({
                 className={`text-[10px] px-2 py-0.5 rounded-full font-mono font-semibold transition-colors ${
                   isSelected
                     ? 'bg-white/20 text-white'
-                    : 'bg-rose-50 text-stone-500 group-hover:bg-rose-100 group-hover:text-primary'
+                    : 'bg-surface-soft text-muted-taupe group-hover:bg-surface-secondary/50 group-hover:text-espresso'
                 }`}
               >
                 {count}

@@ -171,7 +171,7 @@ export const HomePage: React.FC = () => {
   }, [products, filterState]);
 
   return (
-    <div className="min-h-screen flex flex-col bg-stone-50/50 text-text-main">
+    <div className="min-h-screen flex flex-col bg-ivory text-text-main">
       {/* Top Navigation */}
       <Navbar />
 
@@ -183,16 +183,16 @@ export const HomePage: React.FC = () => {
         {/* 2. Shop - Complete Boutique Catalog & Category Discovery */}
         <section id="shop" className="py-16 md:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           {/* Shop Header */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-rose-100 pb-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-warm-border pb-8">
             <div className="space-y-3 max-w-xl">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 border border-rose-200/80 text-xs font-semibold text-primary uppercase tracking-wider">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-soft border border-warm-border text-xs font-semibold text-antique-gold uppercase tracking-wider">
                 <Sparkles className="w-3.5 h-3.5" />
                 <span>Complete Luxury Boutique Catalog</span>
               </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-stone-900">
+              <h2 className="font-serif text-3xl sm:text-4xl font-bold tracking-tight text-espresso">
                 Shop All Collections
               </h2>
-              <p className="text-sm sm:text-base text-stone-600">
+              <p className="text-sm sm:text-base text-muted-taupe">
                 Search by name, brand, or formula. Refine by category, price, brand, or discount.
               </p>
             </div>
@@ -220,7 +220,7 @@ export const HomePage: React.FC = () => {
               <button
                 type="button"
                 onClick={handleResetFilters}
-                className="self-start sm:self-auto inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-stone-600 hover:text-primary hover:bg-rose-50 rounded-full border border-stone-200/80 transition-colors shrink-0 cursor-pointer"
+                className="self-start sm:self-auto inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-mocha hover:text-espresso hover:bg-surface-soft rounded-full border border-warm-border transition-colors shrink-0 cursor-pointer"
               >
                 <FilterX className="w-3.5 h-3.5" />
                 <span>Reset All</span>
@@ -238,9 +238,9 @@ export const HomePage: React.FC = () => {
           />
 
           {/* Results Counter Banner */}
-          <div className="flex items-center justify-between text-xs text-stone-500 font-mono pt-1">
+          <div className="flex items-center justify-between text-xs text-muted-taupe font-mono pt-1">
             <span>
-              Showing <strong className="text-stone-900">{processedProducts.length}</strong> of{' '}
+              Showing <strong className="text-espresso">{processedProducts.length}</strong> of{' '}
               {products.length} products
               {filterState.category !== 'All' ? ` in ${filterState.category}` : ''}
             </span>
@@ -290,9 +290,9 @@ export const HomePage: React.FC = () => {
             type="button"
             onClick={() => setIsCartOpen(true)}
             aria-label="Open Shopping Cart"
-            className="flex items-center gap-2.5 px-5 py-3.5 rounded-full bg-stone-900 hover:bg-black text-white shadow-xl shadow-stone-950/25 hover:scale-105 transition-all text-xs sm:text-sm font-semibold cursor-pointer border border-stone-800"
+            className="flex items-center gap-2.5 px-5 py-3.5 rounded-full bg-espresso hover:bg-mocha text-white shadow-xl shadow-stone-950/25 hover:scale-105 transition-all text-xs sm:text-sm font-semibold cursor-pointer border border-mocha"
           >
-            <ShoppingCart className="w-4 h-4 text-rose-300" />
+            <ShoppingCart className="w-4 h-4 text-champagne-gold" />
             <span>Cart ({cartCount}) &bull; {formatPKR(totalPayable)}</span>
           </button>
         </aside>

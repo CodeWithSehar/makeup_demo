@@ -72,19 +72,19 @@ const ProductDetailsModalContent: React.FC<{ product: Product; onClose: () => vo
     >
       {/* Backdrop */}
       <div
-        className="fixed inset-0 bg-stone-900/60 backdrop-blur-sm transition-opacity"
+        className="fixed inset-0 bg-espresso/60 backdrop-blur-sm transition-opacity"
         onClick={onClose}
         aria-hidden="true"
       />
 
       {/* Modal Dialog Card */}
-      <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl border border-rose-100 overflow-hidden z-10 my-auto animate-in fade-in zoom-in-95 duration-200">
+      <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl border border-warm-border overflow-hidden z-10 my-auto animate-in fade-in zoom-in-95 duration-200">
         {/* Close Button */}
         <button
           type="button"
           onClick={onClose}
           aria-label="Close details"
-          className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white/90 backdrop-blur-xs text-stone-500 hover:text-stone-900 hover:bg-stone-100 flex items-center justify-center transition-colors shadow-sm focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:outline-none cursor-pointer"
+          className="absolute top-4 right-4 z-20 w-10 h-10 rounded-full bg-white/90 backdrop-blur-xs text-muted-taupe hover:text-espresso hover:bg-surface-soft flex items-center justify-center transition-colors shadow-sm focus-visible:ring-2 focus-visible:ring-antique-gold focus-visible:outline-none cursor-pointer"
         >
           <X className="w-5 h-5" />
         </button>
@@ -92,7 +92,7 @@ const ProductDetailsModalContent: React.FC<{ product: Product; onClose: () => vo
         <div className="grid grid-cols-1 md:grid-cols-12 gap-0">
           
           {/* Left Column: Large Product Image & Gallery Thumbnails */}
-          <div className="md:col-span-6 relative bg-rose-50/50 p-6 sm:p-8 flex flex-col justify-center border-b md:border-b-0 md:border-r border-rose-100/80 space-y-4">
+          <div className="md:col-span-6 relative bg-ivory p-6 sm:p-8 flex flex-col justify-center border-b md:border-b-0 md:border-r border-warm-border/80 space-y-4">
             <div className="relative w-full aspect-square rounded-2xl overflow-hidden shadow-lg bg-white">
               <img
                 src={imageError ? fallbackImage : currentDisplayImage}
@@ -109,7 +109,7 @@ const ProductDetailsModalContent: React.FC<{ product: Product; onClose: () => vo
               <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
                 <Badge variant="blush">{product.category}</Badge>
                 {product.discountPercentage && (
-                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-rose-600 text-white text-xs font-bold shadow-xs">
+                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-antique-gold text-white text-xs font-bold shadow-xs">
                     <Tag className="w-3 h-3" />
                     <span>{product.discountPercentage}% OFF</span>
                   </span>
@@ -119,18 +119,18 @@ const ProductDetailsModalContent: React.FC<{ product: Product; onClose: () => vo
               {/* Stock Status Badge */}
               <div className="absolute bottom-3 left-3 z-10">
                 {isOutOfStock ? (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-rose-900 text-white text-xs font-bold shadow-sm">
-                    <XCircle className="w-3.5 h-3.5 text-rose-300" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-error text-white text-xs font-bold shadow-sm">
+                    <XCircle className="w-3.5 h-3.5 text-red-200" />
                     <span>Out of Stock</span>
                   </span>
                 ) : isLowStock ? (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-500 text-white text-xs font-bold shadow-sm">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-warning text-white text-xs font-bold shadow-sm">
                     <AlertTriangle className="w-3.5 h-3.5" />
                     <span>Only {product.stock} units left!</span>
                   </span>
                 ) : (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 text-emerald-700 text-xs font-medium border border-emerald-200 shadow-xs">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 text-success text-xs font-medium border border-emerald-200 shadow-xs">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-success" />
                     <span>In Stock ({product.stock} units)</span>
                   </span>
                 )}
@@ -147,8 +147,8 @@ const ProductDetailsModalContent: React.FC<{ product: Product; onClose: () => vo
                     onClick={() => setActiveImageIndex(idx)}
                     className={`relative w-14 h-14 rounded-xl overflow-hidden border-2 transition-all shrink-0 cursor-pointer ${
                       activeImageIndex === idx
-                        ? 'border-primary ring-2 ring-rose-200'
-                        : 'border-stone-200 hover:border-stone-400 opacity-70 hover:opacity-100'
+                        ? 'border-antique-gold ring-2 ring-champagne-gold/50'
+                        : 'border-warm-border hover:border-antique-gold/60 opacity-70 hover:opacity-100'
                     }`}
                   >
                     <img
@@ -168,76 +168,76 @@ const ProductDetailsModalContent: React.FC<{ product: Product; onClose: () => vo
             <div className="space-y-4">
               {/* Brand & Category */}
               <div className="flex items-center justify-between">
-                <span className="text-xs font-mono font-bold uppercase tracking-wider text-primary">
+                <span className="text-xs font-mono font-bold uppercase tracking-wider text-antique-gold">
                   {product.brand}
                 </span>
                 {product.rating && (
-                  <div className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-amber-50 border border-amber-200 text-xs font-semibold text-amber-800">
-                    <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
+                  <div className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-soft border border-champagne-gold/50 text-xs font-semibold text-mocha">
+                    <Star className="w-3.5 h-3.5 fill-champagne-gold text-champagne-gold" />
                     <span>{product.rating.toFixed(1)} / 5.0 ({product.reviewsCount || 45} reviews)</span>
                   </div>
                 )}
               </div>
 
               {/* Title */}
-              <h2 id="modal-product-title" className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 leading-tight">
+              <h2 id="modal-product-title" className="font-serif text-2xl sm:text-3xl font-bold text-espresso leading-tight">
                 {product.name}
               </h2>
 
               {/* Shade / Fragrance Notes */}
               {product.shade && (
-                <div className="px-3 py-1.5 rounded-lg bg-rose-50 border border-rose-100 text-xs text-rose-900 font-medium inline-block">
+                <div className="px-3 py-1.5 rounded-lg bg-surface-soft border border-warm-border text-xs text-mocha font-medium inline-block">
                   <strong>Shade:</strong> {product.shade}
                 </div>
               )}
 
               {product.fragranceNotes && (
-                <div className="px-3 py-2 rounded-lg bg-stone-50 border border-stone-200 text-xs text-stone-700 space-y-0.5">
-                  <p className="font-mono uppercase font-bold text-[10px] text-primary">Fragrance Pyramid:</p>
+                <div className="px-3 py-2 rounded-lg bg-ivory border border-warm-border text-xs text-mocha space-y-0.5">
+                  <p className="font-mono uppercase font-bold text-[10px] text-antique-gold">Fragrance Pyramid:</p>
                   <p className="leading-relaxed">{product.fragranceNotes}</p>
                 </div>
               )}
 
               {/* Price & Discount */}
               <div className="flex items-baseline gap-3 pt-1">
-                <span className="font-serif text-2xl sm:text-3xl font-bold text-primary">
+                <span className="font-serif text-2xl sm:text-3xl font-bold text-mocha">
                   {formatPKR(product.price)}
                 </span>
                 {product.originalPrice && (
-                  <span className="text-base text-stone-400 line-through font-mono">
+                  <span className="text-base text-muted-taupe/70 line-through font-mono">
                     {formatPKR(product.originalPrice)}
                   </span>
                 )}
                 {product.discountPercentage && (
-                  <span className="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
+                  <span className="text-xs font-bold text-success bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
                     Save {product.discountPercentage}%
                   </span>
                 )}
               </div>
 
               {/* Description */}
-              <p className="text-sm text-stone-600 leading-relaxed">
+              <p className="text-sm text-muted-taupe leading-relaxed">
                 {product.description}
               </p>
 
               {/* Ingredients */}
               {product.ingredients && (
-                <div className="text-xs text-stone-500 pt-1 border-t border-rose-100/60">
-                  <strong className="text-stone-800 font-mono uppercase text-[10px] block mb-0.5">Key Ingredients:</strong>
+                <div className="text-xs text-muted-taupe pt-1 border-t border-warm-border/70">
+                  <strong className="text-espresso font-mono uppercase text-[10px] block mb-0.5">Key Ingredients:</strong>
                   <span>{product.ingredients}</span>
                 </div>
               )}
 
               {/* Features / Highlights */}
               {product.features && product.features.length > 0 && (
-                <div className="pt-2 border-t border-rose-100/80 space-y-1.5">
-                  <h4 className="text-xs font-semibold uppercase tracking-wider text-stone-900 font-mono">
+                <div className="pt-2 border-t border-warm-border/80 space-y-1.5">
+                  <h4 className="text-xs font-semibold uppercase tracking-wider text-espresso font-mono">
                     Formula Highlights
                   </h4>
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                     {product.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-2 text-xs text-stone-700">
-                        <Check className="w-3.5 h-3.5 text-emerald-500 shrink-0" />
+                      <li key={idx} className="flex items-center gap-2 text-xs text-mocha">
+                        <Check className="w-3.5 h-3.5 text-success shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -247,13 +247,13 @@ const ProductDetailsModalContent: React.FC<{ product: Product; onClose: () => vo
             </div>
 
             {/* Quantity Stepper & Dual Checkout Actions */}
-            <div className="pt-4 border-t border-rose-100 space-y-4">
+            <div className="pt-4 border-t border-warm-border space-y-4">
               {!isOutOfStock ? (
                 <>
                   <div className="flex items-center justify-between">
                     <div>
-                      <span className="text-xs font-medium text-stone-700 block">Select Quantity</span>
-                      <span className="text-[11px] text-stone-500">
+                      <span className="text-xs font-medium text-mocha block">Select Quantity</span>
+                      <span className="text-[11px] text-muted-taupe">
                         Max {Math.min(20, product.stock)} units available
                       </span>
                     </div>
@@ -267,8 +267,8 @@ const ProductDetailsModalContent: React.FC<{ product: Product; onClose: () => vo
                   </div>
 
                   <div className="flex items-center justify-between text-sm py-1 font-mono">
-                    <span className="text-stone-500">Order Subtotal:</span>
-                    <span className="font-bold text-stone-900 text-base text-primary">
+                    <span className="text-muted-taupe">Order Subtotal:</span>
+                    <span className="font-bold text-base text-mocha">
                       {formatPKR(totalPrice)}
                     </span>
                   </div>
@@ -279,8 +279,8 @@ const ProductDetailsModalContent: React.FC<{ product: Product; onClose: () => vo
                       onClick={handleAddToCart}
                       className={`w-full flex items-center justify-center gap-2.5 py-3.5 px-6 rounded-xl font-semibold text-sm transition-all shadow-md cursor-pointer ${
                         addedToast
-                          ? 'bg-emerald-600 text-white'
-                          : 'bg-primary hover:bg-primary-dark text-white shadow-rose-900/15 hover:shadow-lg'
+                          ? 'bg-success text-white'
+                          : 'bg-espresso hover:bg-mocha text-white shadow-stone-900/15 hover:shadow-lg'
                       }`}
                     >
                       {addedToast ? (
@@ -302,24 +302,24 @@ const ProductDetailsModalContent: React.FC<{ product: Product; onClose: () => vo
                         onClose();
                         setIsCartOpen(true);
                       }}
-                      className="w-full text-center text-xs font-semibold text-stone-600 hover:text-primary transition-colors py-1 cursor-pointer"
+                      className="w-full text-center text-xs font-semibold text-muted-taupe hover:text-espresso transition-colors py-1 cursor-pointer"
                     >
                       View Cart &amp; Checkout &rarr;
                     </button>
                   </div>
                 </>
               ) : (
-                <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-center space-y-2">
-                  <p className="text-sm font-semibold text-rose-800">
+                <div className="p-4 rounded-2xl bg-surface-soft border border-warm-border text-center space-y-2">
+                  <p className="text-sm font-semibold text-error">
                     This product is currently out of stock.
                   </p>
-                  <p className="text-xs text-stone-600">
+                  <p className="text-xs text-muted-taupe">
                     Restock arriving this week. Feel free to contact our store concierge to reserve an item.
                   </p>
                   <a
                     href="#contact"
                     onClick={onClose}
-                    className="inline-flex items-center gap-1 text-xs font-semibold text-primary hover:underline cursor-pointer"
+                    className="inline-flex items-center gap-1 text-xs font-semibold text-antique-gold hover:underline cursor-pointer"
                   >
                     <span>Contact Store Concierge &rarr;</span>
                   </a>

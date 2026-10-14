@@ -13,21 +13,21 @@ export const Footer: React.FC = () => {
   const fullAddress = `${settings.address}, ${settings.city}`;
 
   return (
-    <footer className="bg-stone-900 text-stone-300 pt-16 pb-10 border-t border-stone-800">
+    <footer className="bg-espresso text-surface-soft/90 pt-16 pb-10 border-t border-mocha">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-stone-800">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-mocha">
           
           {/* Brand Info */}
           <div className="space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-white shadow-sm">
+              <div className="w-9 h-9 rounded-full bg-antique-gold flex items-center justify-center text-white shadow-sm">
                 <Sparkles className="w-4 h-4" />
               </div>
               <span className="font-serif text-2xl font-bold tracking-tight text-white">
                 {settings.shopName}
               </span>
             </div>
-            <p className="text-sm text-stone-400 leading-relaxed">
+            <p className="text-sm text-surface-secondary leading-relaxed">
               Curating luxury makeup, skincare, haircare, perfumes, watches, and accessories. 100% authentic, delivered with care across Pakistan.
             </p>
             <div className="flex items-center gap-3 pt-2">
@@ -36,7 +36,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="w-8 h-8 rounded-full bg-stone-800 hover:bg-pink-600 text-stone-300 hover:text-white flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-full bg-mocha/70 hover:bg-antique-gold text-surface-soft hover:text-white flex items-center justify-center transition-colors"
               >
                 <InstagramIcon className="w-4 h-4" />
               </a>
@@ -45,7 +45,7 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Facebook"
-                className="w-8 h-8 rounded-full bg-stone-800 hover:bg-blue-600 text-stone-300 hover:text-white flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-full bg-mocha/70 hover:bg-antique-gold text-surface-soft hover:text-white flex items-center justify-center transition-colors"
               >
                 <FacebookIcon className="w-4 h-4" />
               </a>
@@ -54,12 +54,12 @@ export const Footer: React.FC = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok"
-                className="w-8 h-8 rounded-full bg-stone-800 hover:bg-stone-700 text-stone-300 hover:text-white flex items-center justify-center transition-colors"
+                className="w-8 h-8 rounded-full bg-mocha/70 hover:bg-antique-gold text-surface-soft hover:text-white flex items-center justify-center transition-colors"
               >
                 <TikTokIcon className="w-4 h-4" />
               </a>
             </div>
-            <div className="flex items-center gap-2 pt-1 text-xs text-rose-300">
+            <div className="flex items-center gap-2 pt-1 text-xs text-champagne-gold">
               <ShieldCheck className="w-4 h-4 text-emerald-400" />
               <span>Verified Authentic Pakistani Boutique</span>
             </div>
@@ -72,32 +72,32 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#shop" className="hover:text-rose-400 transition-colors">
+                <a href="#shop" className="hover:text-champagne-gold transition-colors">
                   Makeup Essentials
                 </a>
               </li>
               <li>
-                <a href="#shop" className="hover:text-rose-400 transition-colors">
+                <a href="#shop" className="hover:text-champagne-gold transition-colors">
                   Dermatological Skincare
                 </a>
               </li>
               <li>
-                <a href="#shop" className="hover:text-rose-400 transition-colors">
+                <a href="#shop" className="hover:text-champagne-gold transition-colors">
                   Botanical Haircare
                 </a>
               </li>
               <li>
-                <a href="#shop" className="hover:text-rose-400 transition-colors">
+                <a href="#shop" className="hover:text-champagne-gold transition-colors">
                   Artisanal Perfumes &amp; Oud
                 </a>
               </li>
               <li>
-                <a href="#shop" className="hover:text-rose-400 transition-colors">
+                <a href="#shop" className="hover:text-champagne-gold transition-colors">
                   Prestige Watches
                 </a>
               </li>
               <li>
-                <a href="#shop" className="hover:text-rose-400 transition-colors">
+                <a href="#shop" className="hover:text-champagne-gold transition-colors">
                   Jewelry &amp; Accessories
                 </a>
               </li>
@@ -109,22 +109,22 @@ export const Footer: React.FC = () => {
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white font-mono">
               Order Dispatch &amp; Hours
             </h4>
-            <div className="space-y-2 text-sm text-stone-400">
+            <div className="space-y-2 text-sm text-surface-secondary">
               <div className="flex items-start gap-2.5">
-                <Clock className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-antique-gold shrink-0 mt-0.5" />
                 <div>
                   <p className="text-white font-medium">Monday – Saturday</p>
                   <p className="text-xs">10:00 AM – 9:00 PM (PKT)</p>
                 </div>
               </div>
               <div className="flex items-start gap-2.5 pt-1">
-                <Clock className="w-4 h-4 text-stone-500 shrink-0 mt-0.5" />
+                <Clock className="w-4 h-4 text-champagne-gold shrink-0 mt-0.5" />
                 <div>
                   <p className="text-white font-medium">Sunday</p>
                   <p className="text-xs">2:00 PM – 8:00 PM (WhatsApp Concierge)</p>
                 </div>
               </div>
-              <p className="text-xs text-stone-400 pt-2 border-t border-stone-800">
+              <p className="text-xs text-surface-secondary pt-2 border-t border-mocha">
                 Same-day dispatch for orders confirmed before 3:00 PM PKT.
               </p>
             </div>
@@ -152,16 +152,16 @@ export const Footer: React.FC = () => {
                   href={`tel:+${whatsappNum}`}
                   className="flex items-center gap-2.5 hover:text-white transition-colors"
                 >
-                  <Phone className="w-4 h-4 text-primary shrink-0" />
+                  <Phone className="w-4 h-4 text-antique-gold shrink-0" />
                   <span>Call: {phoneNum}</span>
                 </a>
               </li>
-              <li className="flex items-start gap-2.5 text-stone-400">
-                <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+              <li className="flex items-start gap-2.5 text-surface-secondary">
+                <MapPin className="w-4 h-4 text-antique-gold shrink-0 mt-0.5" />
                 <span>{fullAddress}</span>
               </li>
-              <li className="flex items-center gap-2.5 text-stone-400">
-                <Mail className="w-4 h-4 text-stone-500 shrink-0" />
+              <li className="flex items-center gap-2.5 text-surface-secondary">
+                <Mail className="w-4 h-4 text-champagne-gold shrink-0" />
                 <span>{settings.email || 'concierge@glowandgrace.pk'}</span>
               </li>
             </ul>
@@ -170,13 +170,13 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-stone-400 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-surface-secondary gap-4">
           <p>
             &copy; {CURRENT_YEAR} Glow &amp; Grace Cosmetics. All rights reserved. Handcrafted with luxury standards.
           </p>
-          <div className="flex items-center gap-1 text-stone-400">
+          <div className="flex items-center gap-1 text-surface-secondary">
             <span>Delivered across Pakistan with</span>
-            <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline" />
+            <Heart className="w-3.5 h-3.5 text-champagne-gold fill-champagne-gold inline" />
             <span>&amp; care</span>
           </div>
         </div>
